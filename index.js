@@ -1,7 +1,7 @@
 //Subscribe yah kak
 //Udah No Enc Masak Ga Di Subscribe
 //parrah sih
-////
+//ᜃᜁᜃᜁᜃᜁᜃᜁᜃᜁᜃᜁᜃᜁᜃᜁ//
 const { WAConnection: _WAConnection, MessageType, Presence, Mimetype, ChatModification, GroupSettingChange, ReconnectMode } = require('@adiwajshing/baileys')
 const simple = require('./lib/simple.js')
 const WAConnection = simple.WAConnection(_WAConnection)
@@ -227,11 +227,11 @@ deff.on("message-delete", async (m) => {
 
       m.key.remoteJid,
       `
-   
-   : @${m.participant.split("@")[0]}
-   : ${jam} ${week} ${calender}
-   : ${c3type}
- ${control.NamaBot} `, 
+╭───「 Anti Delete 」
+├ ᗙ 𝑁𝑎𝑚𝑎 : @${m.participant.split("@")[0]}
+├ ᗙ 𝑊𝑎𝑘𝑡𝑢 : ${jam} ${week} ${calender}
+├ ᗙ 𝑇𝑦𝑝𝑒 : ${c3type}
+╰───「 ${control.NamaBot} 」`, 
       MessageType.text,
 
       { quoted: m.message, contextInfo: { mentionedJid: [m.participant] } }
