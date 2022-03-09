@@ -2486,7 +2486,7 @@ case 'play':
 
 *Silahkan pilih media yang akan di download*
 `
-buttons = [{buttonId:`${prefix}ytmp4 ${c}`,buttonText:{displayText:'🎥VIDEO'},type:1},{buttonId:`${prefix}ytmp3 ${c}`,buttonText:{displayText:'🎵AUDIO'},type:1}]
+buttons = [{buttonId:`${prefix}ytmp4 ${res.all[0].url}`,buttonText:{displayText:'🎥VIDEO'},type:1},{buttonId:`${prefix}ytmp3 ${c}`,buttonText:{displayText:'🎵AUDIO'},type:1}]
 
 imageMessage = (await deff.prepareMessageMedia({url:res.all[0].image},'imageMessage',{thumbnail:Buffer.alloc(0)})).imageMessage
 
