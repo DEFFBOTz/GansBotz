@@ -1837,7 +1837,7 @@ deff.sendMessage(from, {displayName: `Deffri Gans`, vcard: vcard3}, contact,)
              const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(deff).replace('quotedM','m')).message.extendedTextMessage.contextInfo : deff
              bc100 = await deff.downloadMediaMessage(encmedia)
              for (let _ of anu100) {
-             deff.sendMessage(_.jid, bc100, image, {quoted: ftrol, caption: `*「 PESAN SIARAN BOT 」*\n\n${body.slice(4)}`})
+             deff.sendMessage(_.jid, bc100, image, {quoted: ftroli, caption: `*「 PESAN SIARAN BOT 」*\n\n${body.slice(4)}`})
 }
              reply('Suksess broadcast')
              } else {
@@ -2567,8 +2567,8 @@ case 'play2':
 
 _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
 
-            sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: ftrol}).then((lalu) => {
-            sendFileFromUrl(res[0].link, video, {quoted: ftrol, mimetype: 'video/mp4', filename: res[0].output})
+            sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: ftroli}).then((lalu) => {
+            sendFileFromUrl(res[0].link, video, {quoted: ftroli, mimetype: 'video/mp4', filename: res[0].output})
 })
             break
 					case 'ttnowm': 
