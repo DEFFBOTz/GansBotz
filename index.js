@@ -26,17 +26,13 @@ baterai = 'unknown'
 NamaOwner = `${control.NamaOwner}`
 NamaBot = `${control.NamaBot}`
 NomorOwner = `${control.NomorOwner}`
-//==============pembatas===============\\			
 charging = 'unknown'
 const sleep = async (ms) => {
 return new Promise(resolve => setTimeout(resolve, ms))
 }
-//==============pembatas===============\\			
 require('./deff.js')
 nocache('./deff.js', module => console.log(`${module} is now updated!`))
-//==============pembatas===============\\			
 const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 00,status: 200, thumbnail: fs.readFileSync(`./gambar/thumb.jpg`), surface: 200, message: `)-----[${control.NamaBot}]-----(`, orderTitle: 'deffpratama', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-//==============pembatas===============\\			
 const starts = async (deff = new WAConnection()) => {
     deff.logger.level = 'warn'
     deff.version = [2, 2143, 3]
@@ -53,7 +49,6 @@ const starts = async (deff = new WAConnection()) => {
 		whitespaceBreak: false
 
 	}), 'red'))
-//==============pembatas===============\\			
     deff.browserDescription = [ 'Subscribe DEFFBOTz', 'Safari', '0.0.1' ]
     
     deff.on('qr', () => {
@@ -93,20 +88,15 @@ deff.sendMessage(`${control.NomorOwner}@s.whatsapp.net`,  buttonMessagee, Messag
             },
 			quoted: ftroli,sendEphemeral: true 
 			})
-//==============pembatas===============\\			
     deff.on('ws-close', () => {
         console.log(deffLog('Koneksi terputus, mencoba menghubungkan kembali..'))
     })
-//==============pembatas===============\\			
-    // Mengkoneksi ulang
     deff.on('close', async ({ reason, isReconnecting }) => {
         console.log(deffLog('Koneksi Terputus\nMencoba mengkoneksi ulang :' + isReconnecting))
         if (!isReconnecting) {
             console.log(deffLog('Connect To Phone Rejected and Shutting Down.'))
         }
     })
-//==============pembatas===============\\			
-	// Baterai
 	deff.on('CB:action,,battery', json => {
 
 		global.batteryLevelStr = json[2][0][1].value
@@ -143,11 +133,9 @@ deff.sendMessage(`${control.NomorOwner}@s.whatsapp.net`,  buttonMessagee, Messag
         dtod = "${control.NomorOwner}@s.whatsapp.net"
        otod = `${control.NomorOwner}@s.whatsapp.net`
     })
-//==============pembatas===============\\			
         deff.on('group-participants-update', async (anu) => {
 		await welcome(deff, anu)
 	})
-//==============pembatas===============\\			
 	/deff.on('group-update', async (anu) => {
 		const metdata = await deff.groupMetadata(anu.jid)
     	const fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${metdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;deff;;;\nFN:deff\nitem1.TEL;waid=${control.NomorOwner}:${control.NomorOwner}\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
@@ -239,10 +227,10 @@ deff.on("message-delete", async (m) => {
 
       m.key.remoteJid,
       `
- Anti Delete 
- • Nama : @${m.participant.split("@")[0]}
- • Waktu : ${jam} ${week} ${calender}
- • Type : ${c3type}
+   
+   : @${m.participant.split("@")[0]}
+   : ${jam} ${week} ${calender}
+   : ${c3type}
  ${control.NamaBot} `, 
       MessageType.text,
 
@@ -255,7 +243,6 @@ deff.on("message-delete", async (m) => {
     deff.copyNForward(m.key.remoteJid, m.message);
 
   });
-//==============pembatas===============\\			
 deff.on('CB:action,,call', async json => {
         const callerId = json[2][0][1].from;
         var vcard = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + `${NamaOwner}` + '\n' + `ORG:Developer ${NamaBot}\n` + 'TEL;type=CELL;type=VOICE;waid=' + `${NomorOwner}` + ':+' + `${NomorOwner}` + '\n' + 'END:VCARD'
@@ -267,7 +254,6 @@ deff.on('CB:action,,call', async json => {
         fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
         })
 }
-//==============pembatas===============\\			
 console.clear()
 var progressBar , progress = 0 ;
 function doProgress()
@@ -287,14 +273,12 @@ function doProgress()
 	}
 }
 
-//==============pembatas===============\\			
 function nocache(module, cb = () => { }) {
     fs.watchFile(require.resolve(module), async () => {
         await uncache(require.resolve(module))
         cb(module)
     })
 }
-//==============pembatas===============\\			
 function uncache(module = '.') {
     return new Promise((resolve, reject) => {
         try {
