@@ -2608,30 +2608,24 @@ case 'ganteng': case 'cantik': case 'jelek': case 'goblok':
 	      break	
 //Playy youtube download------->
 case 'play':
-              if (!c) return reply('Linknya?')
-			 res = await yts(q)
-			   let thumbInfo = ` 
+              if (!q) return reply('judulnya?')
+             reply(mess.wait)
+             res = await yts(`q`)
+			bgst = `©DEFFBOTz`
+			   thumbInfo = ` 
 *Youtube Download*
- *Judul :* ${res.all[0].title}
- *ID Video :* ${res.all[0].videoId}
- *Diupload Pada :* ${res.all[0].ago}
- *Views :* ${res.all[0].views}
- *Durasi :* ${res.all[0].timestamp}
- *Channel :* ${res.all[0].author.name}
-*Link Channel :* ${res.all[0].author.url}
+ *🦈 Judul :* ${res.all[0].title}
+ *🐬 ID Video :* ${res.all[0].videoId}
+ *🐋 Diupload Pada :* ${res.all[0].ago}
+ *🦈 Views :* ${res.all[0].views}
+ *🐬 Durasi :* ${res.all[0].timestamp}
+ *🐋 Channel :* ${res.all[0].author.name}
+ *🎣 Link Channel :* ${res.all[0].author.url}
 
 *Silahkan pilih media yang akan di download*
 `
-buttons = [{buttonId:`${prefix}ytmp4 ${res.all[0].url}`,buttonText:{displayText:'🎥VIDEO'},type:1},{buttonId:`${prefix}ytmp3 ${c}`,buttonText:{displayText:'🎵AUDIO'},type:1}]
-
-imageMessage = (await deff.prepareMessageMedia({url:res.all[0].image},'imageMessage',{thumbnail:Buffer.alloc(0)})).imageMessage
-
-buttonsMessage = {contentText: thumbInfo,footerText:'Silahkan Pilih Jenis File Dibawah Ini',imageMessage,buttons,headerType:4}
-
-prep = await deff.prepareMessageFromContent(from,{buttonsMessage},{})
-
-deff.relayWAMessage(prep)
-break               	        	
+deff.sendMessage(from, { contentText: `${thumbInfo}`, footerText: `${bgst}`, buttons: [{ buttonId: `${prefix}ytmp3 ${res.all[0].url}`, buttonText: { displayText: 'AUDIO' }, type: 1 },{ buttonId: `${prefix}ytmp4 ${res.all[0].url}`, buttonText: { displayText: 'VIDEO' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+break              	        	
 case 'playy':
 case 'ytmp3':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
