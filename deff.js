@@ -272,7 +272,7 @@ module.exports = deff = async (deff, mek) => {
         let isLevelingOn = isGroup ? _leveling.includes(from) : true
 //<------------------------------------------------------------------------------->/
 
-        let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 0000,status: 200, thumbnail: fs.readFileSync(`./gambar/thumb.jpg`), surface: 200, message: `「	B⃞O⃞T W⃢HA⃢TSA⃢PP   」	`, orderTitle: 'deffpratama', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+        let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 1010101,status: 200, thumbnail: fs.readFileSync(`./gambar/thumb.jpg`), surface: 200, message: `「	B⃞O⃞T W⃢HA⃢TSA⃢PP   」	`, orderTitle: 'deffpratama', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
         let fdoc = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `「	BOT WHATSAPP   」	`,jpegThumbnail: fs.readFileSync(`./gambar/thumb.jpg`)}}}
         let fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":99999,"ptt": "true"}} } 
         let fgif = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title":`「	BOT WHATSAPP   」	`, "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': `「	BOT WHATSAPP   」	`, 'jpegThumbnail': fs.readFileSync(`./gambar/thumb.jpg`)}}}
@@ -292,60 +292,17 @@ let fakeitem = (teks) => {
 remoteJid :"6289523258649-1604595598@g.us" }: {})
                     },message:{"orderMessage":{"orderId":"174238614569481","thumbnail":fs.readFileSync(`./gambar/thumb.jpg`),"itemCount":10,"status":"INQUIRY","surface":"CATALOG","message":`「	BOT WHATSAPP   」	`,"token":"AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA=="}}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true})}
 //<------------------------------------------------------------------------------->/
-var elit = 'Petualang Biasa'
-			if (isPremium) {
-				elit = 'Petualang Pro'
-			} 
-			if (isOwner) {
-				elit = 'GM in GAME'
-			}
-//<------------------------------------------------------------------------------->/
-// Kalo Make Kasi WM Made By Febriansyah Ajg!!          
-        var ikan = ['🐳','🐲','🐬','🐋','🐟','🐠','🦐','🦑','🦀','🐡','🐙']
-        var hewan = ['🐔','🦃','🦆','🐐','🐏','🐖','🐑','🐎']
-        var burung = ['🦋','🕷','🐝','🐉','🦆','🦅','🕊','🐧','🐦','🦇']        
-        var petnya = ['😾','🐺','🦊','🐶','🐰']
-        var makan = ['🌭','🌮','🌯','🍙','🍝','🍕','🍘','🍟','🍞','🍖','🍡']
-        var buahan = ['🍇','🍎','🍏','🍐','🍒','🍊','🍋','🍑','🍓']
-        let sotoy = [
-        '🍊 : 🍒 : 🍐',
-        '🍒 : 🔔 : 🍊',
-        '🍇 : 🍇 : 🍐',
-        '🍋 : 🍋 : 🍋 Win👑', 
-        '🔔 : 🍋 : 🔔', 
-        '🔔 : 🍒 : 🍐',
-        '🔔 : 🍒 : 🍊',
-        '🍊 : 🍋 : 🔔',        
-        '🍐 : 🍒 : 🍋',
-        '🍐 : 🍒 : 🍐',
-        '🍊 : 🍒 : 🍒',
-        '🍒 : 🍒 : 🍒 Win👑',
-        '🔔 : 🔔 : 🍇',
-        '🍌 : 🍌 : 🔔',
-        '🔔 : 🔔 : 🔔 Win👑',
-        '🍐 : 🔔 : 🔔',
-        '🍊 : 🍋 : 🍒',
-        '🔔 : 🔔 : 🍇',    
-        '🔔 : 🍇 : 🍇', 
-        '🔔 : 🍐 : 🔔', 
-        '🍊 : 🍒 : 🍐', 
-        '🍒 : 🔔 : 🍊', 
-        '🍇 : 🍇 : 🍇 Win👑', 
-        '🍊 : 🍋 : 🔔', 
-        '🔔 : 🍒 : 🍐',                    //by DEFFBOTZZ (dapa)
-        '🔔 : 🍒 : 🍊', 
-        '🍊 : 🍋 : 🔔',	
-        '🍐 : 🍒 : 🍋', 
-        '🍐 : 🍐 : 🍐 Win👑', 
-        '🍊 : 🍒 : 🍒', 
-        '🔔 : 🔔 : 🍇', 
-        '🍌 : 🍒 : 🔔', 
-        '🍐 : 🔔 : 🔔', 
-        '🍊 : 🍋 : 🍒', 
-        '🍋 : 🍋 : 🍌', 
-        '🔔 : 🔔 : 🍇', 
-        '🔔 : 🍐 : 🍇', 
-        '🍌 : 🍌 : 🍌 Win👑']
+//punya nya Zeroyt\\
+            const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍇 : 🍇','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔',		'🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌']
+            const sotoy2 = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔',		'🍐 : 🍒 : 🍋','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇']
+            const sotoy1 = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔',		'🍐 : 🍒 : 🍋','🍊 : 🍒 : 🍒','?? : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇']
+            const sotoy3 = ['🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌']
+            const buruh1 = ['🐳','🦈','🐬','🐋','🐟','🐠','🦐','🦑','🦀','🐚']
+            const buruh2 = ['🐔','🦃','🐿','🐐','🐏','🐖','🐑','🐎','🐺','🦩']
+            const buruh3 = ['🦋','🕷','🐝','🐉','🦆','🦅','🕊','🐧','🐦','🦇']
+            const buruh11 = buruh1[Math.floor(Math.random() * (buruh1.length))]
+		    const buruh22 = buruh2[Math.floor(Math.random() * (buruh2.length))]
+		    const buruh33 = buruh3[Math.floor(Math.random() * (buruh3.length))]
 //<------------------------------------------------------------------------------->/
     let game = require('./lib/game' );
     game.cekWaktuTG(deff, tebakgambar) 
@@ -1397,6 +1354,28 @@ menunya = `⌜𝐺𝑅𝑂𝑈𝑃 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}tebakkata
 ⃝⃤⇝ ${prefix}tebakgambar
 
+⌜𝑅𝐴𝑁𝐷𝑂𝑀 𝐼𝑀𝐴𝐺𝐸⌟
+⃝⃤⇝ ${prefix}ppcp
+⃝⃤⇝ ${prefix}kartun
+⃝⃤⇝ ${prefix}aesthetic
+⃝⃤⇝ ${prefix}tatasurya
+⃝⃤⇝ ${prefix}darkjokes
+⃝⃤⇝ ${prefix}memeindo
+⃝⃤⇝ ${prefix}pokemon
+⃝⃤⇝ ${prefix}katakataimage
+⃝⃤⇝ ${prefix}doraemon
+
+⌜ 𝐶𝐸𝐶𝐴𝑁 𝑀𝐸𝑁𝑈 ⌟
+⃝⃤⇝ ${prefix}cecan
+⃝⃤⇝ ${prefix}cogan
+⃝⃤⇝ ${prefix}indonesia
+⃝⃤⇝ ${prefix}vietnam
+⃝⃤⇝ ${prefix}malaysia
+⃝⃤⇝ ${prefix}japan
+⃝⃤⇝ ${prefix}china
+⃝⃤⇝ ${prefix}korea
+⃝⃤⇝ ${prefix}thailand
+
 ⌜𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}husbu
 ⃝⃤⇝ ${prefix}loli
@@ -1478,7 +1457,7 @@ but = [
         sendButImage(from, trans, menunya, img, but, {quoted: ftroli})
                   break
 case 'rules':
-reply(`── 「 *✤RULES✤* 」 ──\n\n1. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕊𝕡𝕒𝕞 𝔹𝕠𝕥. \nѕαиκѕι: *WARN/SOFT BLOCK*\n\n2. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕋𝕖𝕝𝕖𝕡𝕠𝕟 𝔹𝕠𝕥.\nѕαиκѕι: *SOFT BLOCK*\n\n3. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕄𝕖𝕟𝕘𝕖𝕜𝕤𝕡𝕝𝕠𝕚𝕥𝕒𝕤𝕚 𝔹𝕠𝕥.\nѕαиκѕι: *PERMANENT BLOCK*\n\n4. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕂𝕚𝕔𝕜 𝔹𝕠𝕥 𝔻𝕚 𝔾𝕣𝕦𝕡 𝕂𝕒𝕝𝕚𝕒𝕟.\nѕαиκѕι : *BOT TIDAK BISA MASUK LAGI*\n\n𝐽𝑖𝑘𝑎 𝑆𝑢𝑑𝑎𝒉 𝐷𝑖𝑝𝑎𝒉𝑎𝑚𝑖 𝑅𝑢𝑙𝑒𝑠𝑛𝑦𝑎, 𝑆𝑖𝑙𝑎𝑘𝑎𝑛 𝐾𝑒𝑡𝑖𝑘 *${prefix}𝑐𝑜𝑚𝑚𝑎𝑛𝑑* 𝑈𝑛𝑡𝑢𝑘 𝑀𝑒𝑚𝑢𝑙𝑎𝑖!\n\n──「 *${botName}* 」──`)
+fakestatus(`── 「 *✤RULES✤* 」 ──\n\n1. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕊𝕡𝕒𝕞 𝔹𝕠𝕥. \nѕαиκѕι: *WARN/SOFT BLOCK*\n\n2. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕋𝕖𝕝𝕖𝕡𝕠𝕟 𝔹𝕠𝕥.\nѕαиκѕι: *SOFT BLOCK*\n\n3. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕄𝕖𝕟𝕘𝕖𝕜𝕤𝕡𝕝𝕠𝕚𝕥𝕒𝕤𝕚 𝔹𝕠𝕥.\nѕαиκѕι: *PERMANENT BLOCK*\n\n4. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕂𝕚𝕔𝕜 𝔹𝕠𝕥 𝔻𝕚 𝔾𝕣𝕦𝕡 𝕂𝕒𝕝𝕚𝕒𝕟.\nѕαиκѕι : *BOT TIDAK BISA MASUK LAGI*\n\n𝐽𝑖𝑘𝑎 𝑆𝑢𝑑𝑎𝒉 𝐷𝑖𝑝𝑎𝒉𝑎𝑚𝑖 𝑅𝑢𝑙𝑒𝑠𝑛𝑦𝑎, 𝑆𝑖𝑙𝑎𝑘𝑎𝑛 𝐾𝑒𝑡𝑖𝑘 *${prefix}𝑐𝑜𝑚𝑚𝑎𝑛𝑑* 𝑈𝑛𝑡𝑢𝑘 𝑀𝑒𝑚𝑢𝑙𝑎𝑖!\n\n──「 *${botName}* 」──`)
 break
           case 'd':
         case 'del':
@@ -1493,14 +1472,17 @@ break
 case 'simpelmenu':
 case 'command':
 case 'listmenu':
- listMsg = {
+timestampe = speed();
+latensie = speed() - timestampe
+ let listMsg = {
+ title: "©Deffri Gans",
  buttonText: 'KLIK DISINI',
  footerText: 'D̡͈̦̤͕ͫͫ͌́̊̆̌́͡ͅE̴̜̳͚̠̥͆ͫͣ́̋̃̄҉̛F̭̭̟̹̈́ͮ̿ͧͭ͋̓͟ͅ͏̴F̸̡̯̮̻̼ͤͫ̂ͨͬ̃̽ͅ҉B̡̡̩̯̜͉̖͂͛̀̊̈́̍̃͠O̸̵̧͖̘̩̣͎̽̈̎ͩͧ̑̈́T̜͉̤̹͚̆ͫ̒͗̋ͥͭ͏͘͘ẕ̦̩̬͈̊̎͛͐̓ͪ̿͏̧҉',
  description: `Hai kak @${sender.split('@')[0]},\n┏┉⌣ ┈̥-̶̯͡..̷̴✽̶\n┆ *INFO BOT*\n└┈┈┈┈┈┈┈┈┈\n\nCreator Bot : De⃟f⃢fri Ga⃢⃟ns❦\nNama Owner : ${ownerName}\nNama Bot : ${botName}\nPrefix : Multi Prefix\nBaterai : ${baterai}%\nSpeed : ${latensie.toFixed(4)} second\nLanguage : Javascript`,
  sections: [
-                     {
-                      "title": `${tanggal}`,
- rows: [
+                 {
+                 "title": `SIMPLE MENU`, 
+                 "rows" : [
                           {
                         "title": "--->Semua Menu[📄]",
                        "description" :"Menampilkan Semua Menu BOT",
@@ -1508,59 +1490,72 @@ case 'listmenu':
                            },
                           {
                         "title": "--->Owner Menu[🤴]",
-                       "description" :"Menampilkan Menu Owner",
+                       "description" :"Menampilkan Menu...",
                        "rowId": `${prefix}ownermenu`
                            },
                            {                         
                               "title": "--->Maker Menu[📝]",
-                              "description" :"Menampilkan Menu Maker",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}makermenu`
                            },
                            {                         
                               "title": "--->Kerang Menu[🐚]",
-                              "description" :"Menampilkan Menu Kerang",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}kerangmenu`
                            },
                            {                         
                               "title": "--->Islam Menu[🕌]",
-                              "description" :"Menampilkan Menu Islam",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}islamicmenu`
                            },
                            {                         
                               "title": "--->Download Menu[📤]",
-                              "description" :"Menampilkan Menu Download",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}downloadmenu`
                            },
                            {                         
                               "title": "--->Game Menu[🎮]",
-                              "description" :"Menampilkan Menu Game",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}gamemenu`
                            },
                            {                         
+                              "title": "--->Cecan Menu[👸]",
+                              "description" :"Menampilkan Menu...",
+                              "rowId": `${prefix}cecanmenu`
+                           },
+                           {                         
                               "title": "--->Hewan Menu[🦊]",
-                              "description" :"Menampilkan Menu Hewan",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}hewanmenu`
                            },
                            {                         
                               "title": "--->Sticker Menu[🗿]",
-                              "description" :"Menampilkan Menu Sticker",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}stickermenu`
                            },
                            {                         
                               "title": "--->Group Menu[🐣]",
-                              "description" :"Menampilkan Menu Grup",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}groupmenu`
                            },
                            {                         
+                              "title": "--->Random Image[🖼️]",
+                              "description" :"Menampilkan Menu...",
+                              "rowId": `${prefix}randomimg`
+                           },
+                           {                         
                               "title": "--->Random Menu[🌏]",
-                              "description" :"Menampilkan Menu Random",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}randommenu`
                            },
                            {                         
                               "title": "--->Anime Menu[🇯🇵]",
-                              "description" :"Menampilkan Menu Wibu",
+                              "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}animemenu`
-                           },
+                           }]
+                 },{
+                 "title": `INFO`, 
+                 "rows" : [
                            {
                         "title": "--->SCRIPT[🗒️]",
                        "description" :"",
@@ -1577,15 +1572,20 @@ case 'listmenu':
                               "rowId": `${prefix}runtime`
                            },
                            {                         
+                              "title": "--->SPEED[🏃]",
+                              "description" :"",
+                              "rowId": `${prefix}ping`
+                           },
+                           {                         
                               "title": "--->OWNER[😎]",
                               "description" :"",
                               "rowId": `${prefix}owner`
-                           },
-                        ]
-                     }],
- listType: 1
-}
-deff.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [sender]},quoted:ftroli})
+                           }]
+                 }
+                 ],
+                 listType: 1
+            }
+deff.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [sender]}, quoted:mek })
 break
 case 'groupmenu':
 menunya = `⌜𝐺𝑅𝑂𝑈𝑃 𝑀𝐸𝑁𝑈⌟
@@ -1689,6 +1689,20 @@ menunya = `⌜𝑇𝐴𝐺 𝑀𝐸𝑁𝑈⌟
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
+case 'randomimg':
+menunya = `⌜𝑅𝐴𝑁𝐷𝑂𝑀 𝐼𝑀𝐴𝐺𝐸⌟
+⃝⃤⇝ ${prefix}ppcp
+⃝⃤⇝ ${prefix}kartun
+⃝⃤⇝ ${prefix}aesthetic
+⃝⃤⇝ ${prefix}tatasurya
+⃝⃤⇝ ${prefix}darkjokes
+⃝⃤⇝ ${prefix}memeindo
+⃝⃤⇝ ${prefix}pokemon
+⃝⃤⇝ ${prefix}katakataimage
+⃝⃤⇝ ${prefix}doraemon
+`
+deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+break
 case 'animemenu':
 menunya = `⌜𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}husbu
@@ -1771,7 +1785,7 @@ menunya = `⌜𝑀𝐴𝐾𝐸𝑅 𝑀𝐸𝑁𝑈⌟
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
 case 'hewanmenu':
-menunya = `⌜ _HEWAN MENU_ ⌟
+menunya = `⌜ 𝐻𝐸𝑊𝐴𝑁 𝑀𝐸𝑁𝑈_ ⌟
 ⃝⃤⇝ ${prefix}fox
 ⃝⃤⇝ ${prefix}panda
 ⃝⃤⇝ ${prefix}panda2
@@ -1779,6 +1793,20 @@ menunya = `⌜ _HEWAN MENU_ ⌟
 ⃝⃤⇝ ${prefix}bird
 ⃝⃤⇝ ${prefix}cat
 ⃝⃤⇝ ${prefix}dog
+`
+deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+break
+case 'cecanmenu':
+menunya = `⌜ 𝐶𝐸𝐶𝐴𝑁 𝑀𝐸𝑁𝑈 ⌟
+⃝⃤⇝ ${prefix}cecan
+⃝⃤⇝ ${prefix}cogan
+⃝⃤⇝ ${prefix}indonesia
+⃝⃤⇝ ${prefix}vietnam
+⃝⃤⇝ ${prefix}malaysia
+⃝⃤⇝ ${prefix}japan
+⃝⃤⇝ ${prefix}china
+⃝⃤⇝ ${prefix}korea
+⃝⃤⇝ ${prefix}thailand
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
@@ -1826,6 +1854,42 @@ case 'apakah':
 					await (sender)
 					break
 
+//━━━━━━━━━━━━━━━[ FITUR CECAN ]━━━━━━━━━━━━━━━━━//
+
+case 'cecan':
+case 'cogan':
+case 'indonesia':
+case 'vietnam':
+case 'thailand':
+case 'korea':
+case 'china':
+case 'japan':
+case 'malaysia':
+reply(mess.wait)
+cecan = await getBuffer(`https://apidhani.herokuapp.com/api/cecan/${command}?apikey=NisaaCantik`)
+deff.sendMessage(from, cecan, image, {quoted: mek, caption: '_Nih Kak_'})
+break
+//------------------------------Random Image--------------------------\\
+case 'ppcp':
+case 'ppcouple':
+anu = await fetchJson(`https://apidhani.herokuapp.com/api/random/ppcouple?apikey=NisaaCantik}`)
+buff1 = await getBuffer (anu.result.male)
+deff.sendMessage(from, buff1, image, {quoted: mek, caption: '_Nih kak cowoknya_'})
+buff2 =await getBuffer (anu.result.female)
+deff.sendMessage(from, buff2, image, {quoted: mek, caption: '_Nih kak ceweknya_'})
+break
+case 'kartun':
+case 'katakataimage':
+case 'aesthetic':
+case 'darkjokes':
+case 'memeindo':
+case 'pokemon':
+case 'tatasurya':
+case 'doraemon':
+ reply(mess.wait)
+random = await getBuffer(`https://apidhani.herokuapp.com/api/randomimage/${command}?apikey=NisaaCantik`)
+deff.sendMessage(from, random, image, {quoted: mek, caption: '_Nih Kak_'})
+break
  //≈≈≈≈≈≈≈≈≈≈≈≈≈InfoBot≈≈≈≈≈≈≈≈≈≈≈≈≈°°Ω
  case 'owner':
 vcard3 = 'BEGIN:VCARD\n' +
@@ -1930,7 +1994,6 @@ let groups = deff.chats.array.filter(v => v.jid.endsWith('g.us'));
                  latensie = speed() - timestampe
                  let { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = deff.user.phone;
                  let ramTwo = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
-                 let buff = await getBuffer(mek)
                  teks1 = `「 *𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗢𝗧* 」\n• Group Chats : ${groups.length}\n• Private Chats : ${privat.length}\n• Total Chats : ${totalChat.length}\n• Speed : ${latensie.toFixed(4)} second\n• Multi Prefix : iya\n\n\n「 *𝗦𝗧𝗔𝗧𝗨𝗦 𝗗𝗘𝗩𝗜𝗖𝗘* 」\n• Total Ram : ${ramTwo}\n• Platform : ${os.platform()}\n• Hostname : ${os.hostname()}\n• Merk Device : ${device_manufacturer}\n• Version WhatsApp : ${wa_version}\n• Version OS : ${os_version}\n• Version Device : ${device_model}\n• MCC : ${mcc}\n• MNC : ${mnc}`
                  teks = `${tanggal}\n${botName}`
             deff.sendMessage(from, { contentText: `${teks1}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: 'ᴍᴇɴᴜ' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'ᴏᴡɴᴇʀ' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
@@ -1954,6 +2017,20 @@ break
 
 //≈≈≈≈≈≈≈≈≈≈≈≈≈GAME≈≈≈≈≈≈≈≈≈≈≈≈≈°°Ω
 
+case 'slot':
+const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
+const somtoy2 = sotoy1[Math.floor(Math.random() * sotoy1.length)]
+const somtoy3 = sotoy2[Math.floor(Math.random() * sotoy2.length)]
+const somtoy4 = sotoy3[Math.floor(Math.random() * sotoy3.length)]
+deff.sendMessage(from, `
+[ SLOTS ]\n-----------------
+${somtoy2}
+${somtoy}<=====
+${somtoy3}
+[ SLOTS ]
+Keterangan : Jika anda Mendapatkan 3 Buah Sama Berarti Kamu Win
+Contoh : ${somtoy4}<=====`, text, { quoted: ftroli })
+break
 case 'truth': 
 let trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
 let ttrth = trut[Math.floor(Math.random() * trut.length)]
