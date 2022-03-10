@@ -1284,7 +1284,7 @@ case 'menu':
 timestampe = speed();
   latensie = speed() - timestampe
 charger = `${charging ? 'lagi dicas' : 'ga dicas'}`
-teks = `hai Saya ${botName} 👋
+menu = `hai Saya ${botName} 👋
 
 ┏━➤ *INFO BOT* 
 *┣┃* ✢Creator : ${ownerName}
@@ -1308,10 +1308,11 @@ teks = `hai Saya ${botName} 👋
 img = fs.readFileSync('./gambar/deff.jpg')
 trans = `Dilarang Spam Bot!! Jeda Minimal 5detik Spam/Call Auto Baned!.Mohon Hargai Creator Bot\nRuntime : ${runtime(process.uptime())}`
 but = [
+          { buttonId: `${prefix}status`, buttonText: { displayText: 'INFORMATION' }, type: 1 },
           { buttonId: `${prefix}rules`, buttonText: { displayText: 'RULES' }, type: 1 },
           { buttonId: `${prefix}command`, buttonText: { displayText: 'LIST MENU' }, type: 1 }
         ]
-        sendButImage(from, teks, trans, img, but, {quoted: ftroli})
+        sendButImage(from, menu, trans, img, but, {quoted: ftroli})
 break
 case 'allmenu':
 menunya = `⌜𝐺𝑅𝑂𝑈𝑃 𝑀𝐸𝑁𝑈⌟
@@ -1342,6 +1343,10 @@ menunya = `⌜𝐺𝑅𝑂𝑈𝑃 𝑀𝐸𝑁𝑈⌟
 ⌜𝑂𝑊𝑁𝐸𝑅 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}owner
 ⃝⃤⇝ ${prefix}bc _Teks_
+⃝⃤⇝ ${prefix}spam
+⃝⃤⇝ ${prefix}mode
+⃝⃤⇝ ${prefix}public
+⃝⃤⇝ ${prefix}self
 
 ⌜𝐼𝑆𝐿𝐴𝑀 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}listsurah
@@ -1561,6 +1566,11 @@ case 'listmenu':
                        "description" :"",
                        "rowId": `${prefix}sc`
                            },
+                           {
+                        "title": "--->STATUS[⛔]",
+                       "description" :"",
+                       "rowId": `${prefix}status`
+                           },
                            {                         
                               "title": "--->RUNTIME[⏰]",
                               "description" :"",
@@ -1611,6 +1621,10 @@ case 'ownermenu':
 menunya = `⌜𝑂𝑊𝑁𝐸𝑅 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}owner
 ⃝⃤⇝ ${prefix}bc _Teks_
+⃝⃤⇝ ${prefix}spam
+⃝⃤⇝ ${prefix}mode
+⃝⃤⇝ ${prefix}public
+⃝⃤⇝ ${prefix}self
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
@@ -1860,6 +1874,67 @@ deff.sendMessage(from, {displayName: `Deffri Gans`, vcard: vcard3}, contact,)
              reply('Suksess broadcast')
 }
              break
+case 'set':
+	      case 'mode':
+ 
+        if (isOwner && mek.key.fromMe) return reply(mess.only.owner)
+        sendButMessage(from, `SELF OR PUBLIC`, `Silahkan pilih salah satu`, [
+          {
+            buttonId: `${prefix}self`,
+            buttonText: {
+              displayText: `👤 SELF `,
+            },
+            type: 1,
+          },
+          {
+            buttonId: `${prefix}public`,
+            buttonText: {
+              displayText: `👥 PUBLIC`,
+            },
+            type: 1,
+          },
+        ]);
+        break;
+
+case 'self':
+ 
+              if (isOwner && mek.key.fromMe) return reply(mess.only.owner)
+              if (banChats === true) return
+        	    uptime = process.uptime()
+              banChats = true
+              reply(' ```「 SELF MODE 」``` ')
+              break   
+
+case 'public':
+ 
+         	 if (!mek.key.fromMe) return 
+              if (banChats === false) return 
+              banChats = false
+              reply(' ```「 PUBLIC MODE 」``` ')
+              break
+case 'spam':
+if (isOwner && mek.key.fromMe) return reply(mess.only.owner)
+if (!q) return deff.reply(from, `Penggunaan ${prefix}spam teks|jumlah`, fkontak)
+                 let argz = q.split("|")
+                 if (!argz) return deff.reply(from, `Penggunaan ${prefix}spam teks|jumlah`, fkontak)
+				 if (isNaN(argz[1])) return deff.reply(from, `harus berupa angka`, ftroli)
+				 for (let i = 0; i < argz[1]; i++){
+            deff.reply(from, argz[0], mek)
+            }
+break
+case 'status':
+let groups = deff.chats.array.filter(v => v.jid.endsWith('g.us'));
+                 let privat = deff.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'));
+                 let totalChat = await deff.chats.all();
+                 timestampe = speed();
+                 latensie = speed() - timestampe
+                 let { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = deff.user.phone;
+                 let ramTwo = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
+                 let buff = await getBuffer(mek)
+                 teks1 = `「 *𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗢𝗧* 」\n• Group Chats : ${groups.length}\n• Private Chats : ${privat.length}\n• Total Chats : ${totalChat.length}\n• Speed : ${latensie.toFixed(4)} second\n• Multi Prefix : iya\n\n\n「 *𝗦𝗧𝗔𝗧𝗨𝗦 𝗗𝗘𝗩𝗜𝗖𝗘* 」\n• Total Ram : ${ramTwo}\n• Platform : ${os.platform()}\n• Hostname : ${os.hostname()}\n• Merk Device : ${device_manufacturer}\n• Version WhatsApp : ${wa_version}\n• Version OS : ${os_version}\n• Version Device : ${device_model}\n• MCC : ${mcc}\n• MNC : ${mnc}`
+                 teks = `${tanggal}\n${botName}`
+            deff.sendMessage(from, { contentText: `${teks1}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: 'ᴍᴇɴᴜ' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'ᴏᴡɴᴇʀ' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+            break
 case 'sewabot':
 menu =
 `*${ucapanWaktu} @${sender.split('@')[0]}*
@@ -1870,20 +1945,20 @@ menu =
 ⊛ *1 Minggu : 5.000 ( 5K )*
 ⊛ *1 Bulan : 10.000 ( 10K )*
 ⊛ *Permanen : 15.000 ( 15K )*`
-teks =
-`*${tanggal}*`
-deff.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: 'ᴍᴇɴᴜ' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'ᴏᴡɴᴇʀ' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+pas = `*${tanggal}*`
+deff.sendMessage(from, { contentText: `${menu}`, footerText: `${pas}`, buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: 'ᴍᴇɴᴜ' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'ᴏᴡɴᴇʀ' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
 case 'runtime':
 textImg(`${runtime(process.uptime())}`)
 break       
+
 //≈≈≈≈≈≈≈≈≈≈≈≈≈GAME≈≈≈≈≈≈≈≈≈≈≈≈≈°°Ω
 
 case 'truth': 
 let trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
 let ttrth = trut[Math.floor(Math.random() * trut.length)]
 truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-deff.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
+deff.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: ftroli })
 break
 case 'dare':
 let dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "??💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
@@ -1903,10 +1978,10 @@ jawaban = `${data[0].jawaban.replace('Jawaban ', '')}`
 tebakgambar[sender.split('@')[0]] = jawaban.toLowerCase()
 fs.writeFileSync("./database/game/tebakgambar.json", JSON.stringify(tebakgambar))
 console.log(jawaban)
-deff.sendMessage(from, tebakya, image, {quoted: mek, caption: "\n\nTimeout : 120.00 seconds" })
+deff.sendMessage(from, tebakya, image, {quoted: fkontak, caption: "\n\nTimeout : 120.00 seconds" })
 await sleep(120000)
 if (tebakgambar.hasOwnProperty(sender.split('@')[0])) {
-deff.sendMessage(from, "Waktu permainan habis" + '\n\n' +"*Jawaban :*"  + '\n' + '_'+ jawaban +'_', text, {quoted: mek}) // ur cods
+deff.sendMessage(from, "Waktu permainan habis" + '\n\n' +"*Jawaban :*"  + '\n' + '_'+ jawaban +'_', text, {quoted: ftroli}) // ur cods
 delete tebakgambar[sender.split('@')[0]]
 fs.writeFileSync("./database/game/tebakgambar.json", JSON.stringify(tebakgambar))
                     }
@@ -1952,7 +2027,7 @@ case 'tebakanime': case 'ta': {
   if (game.isTebakAnime(from, tebakanime)) return reply(`Masih ada soal yang belum di selesaikan`)
   let anu = await axios.get(`https://api.lolhuman.xyz/api/tebakchara?apikey=${control.lolkey}`)
   let petunjuk = anu.data.result.name.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
-  sendMediaURL(from, anu.data.result.image, monospace(`Silahkan tebak karakter anime berikut ini\n\nPetunjuk : ${petunjuk}\n\nWaktu : ${gamewaktu}s`), mek)
+  sendMediaURL(from, anu.data.result.image, monospace(`Silahkan tebak karakter anime berikut ini\n\nPetunjuk : ${petunjuk}\n\nWaktu : ${gamewaktu}s`), fkontak)
   let nurulsayank = anu.data.result.name.toLowerCase()
   game.addanime(from, nurulsayank, gamewaktu, tebakanime)
   gameAdd(sender, glimit)
@@ -2125,7 +2200,7 @@ case 'tomp3':
        fs.unlinkSync(mediad)
        if (err) return reply(mess.error.api)
        mhee = fs.readFileSync(ran)
-       deff.sendMessage(from, mhee, audio, { mimetype: 'audio/mp4', duration: 234, quoted: mek })
+       deff.sendMessage(from, mhee, audio, { mimetype: 'audio/mp4', duration: 234, quoted: fkontak })
        fs.unlinkSync(ran)
     })
     break
@@ -2139,7 +2214,7 @@ case 'toimg':
               fs.unlinkSync(media)
               if (err) return reply('Gagal, pada saat mengkonversi sticker ke gambar')
               buffer = fs.readFileSync(ran)
-              deff.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nih Kak Jangan Lupa Subscribe DEFFBOTz'})
+              deff.sendMessage(from, buffer, image, {quoted: ftroli, caption: 'Nih Kak Jangan Lupa Subscribe DEFFBOTz'})
               fs.unlinkSync(ran)
 })
               break
@@ -2158,10 +2233,10 @@ if (!q) return reply('emojinya?')
 					qes = args.join(' ')
 reply(mess.wait)
 	emoji.get(`${qes}`).then(async emojii => {
-					teks = `${emojii.images[4].url}`
+					moji = `${emojii.images[4].url}`
 					console.log(teks)
-					//deff.sendMessage(from, await getBuffer(teks), sticker, {mimetype:'image/webp',quoted: mek})
-		  sendStickerUrl(from,`${teks}`)	
+					//deff.sendMessage(from, await getBuffer(teks), sticker, {mimetype:'image/webp',quoted: ftroli})
+		  sendStickerUrl(from,`${moji}`)	
 		
 		})
 		
@@ -2249,7 +2324,6 @@ case 'jadwalsholat':{
 
 //≈≈≈≈≈≈≈≈≈≈≈≈≈Group≈≈≈≈≈≈≈≈≈≈≈≈≈°°Ω
 case 'welcome':
-       if (!isUser) return sendButMessage(from, a, b, ton,{quoted : freply}) 
  
                if (!isGroup) return reply(mess.only.group)
                if (args.length < 1) return reply('!welcome enable/disable')
@@ -2339,13 +2413,13 @@ case 'tagall':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 members_id = []
-teks = (args.length > 1) ? args.join(' ').trim() : ''
+tagni = (args.length > 1) ? args.join(' ').trim() : ''
 teks += '\n\n'
 for (let mem of groupMembers) {
-teks += `• @${mem.jid.split('@')[0]}\n`
+tagni += `• @${mem.jid.split('@')[0]}\n`
 members_id.push(mem.jid)
 }
-mentions(teks, members_id, true)
+mentions(tagni, members_id, true)
 break
 case 'setname':
 if (!isGroup) return reply(mess.only.group)
@@ -2430,6 +2504,7 @@ case 'gc':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins && !mek.key.fromMe) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (args.length == 0) return reply(`Example: ${prefix + command} buka/tutup`)
 if (args[0] === 'buka') {
 reply(`*Berhasil Membuka Grup ${groupMetadata.subject}*`)
 deff.groupSettingChange(from, GroupSettingChange.messageSend, false)
@@ -2450,9 +2525,9 @@ case 'ganteng': case 'cantik': case 'jelek': case 'goblok':
 		  let jdiidc = groupMembers
 		  let kosstc = groupMembers
 		  let akuutc = jdiidc[Math.floor(Math.random() * jdiidc.length)]
-		  teks = `Yang Ter${command} Disini Adalah Si @${akuutc.jid.split('@')[0]}`
+		  ter = `Yang Ter${command} Disini Adalah Si @${akuutc.jid.split('@')[0]}`
 		  jds.push(akuutc.jid)
-		  mentions(teks, jds, true)
+		  mentions(ter, jds, true)
 	      break	
 //Playy youtube download------->
 case 'play':
@@ -2483,10 +2558,10 @@ break
 case 'playy':
 case 'ytmp3':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-teks = args.join(' ')
+yt = args.join(' ')
 reply(mess.wait)
 if (!teks.endsWith("-doc")){
-res = await yts(`${teks}`).catch(e => {
+res = await yts(`${yt}`).catch(e => {
 reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
 })
 reply(` Playing ${res.all[0].title}`)
@@ -2523,7 +2598,7 @@ let thumbInfo = `*${botName}*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
+sendFileFromUrl(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
@@ -2535,9 +2610,9 @@ case 'play2':
 					case 'ytmp4':
             if (args.length < 1) return reply('Link Nya Mana?')
             if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-            teks = args.join(' ')
+            yt = args.join(' ')
             reply(mess.wait)
-            res = await y2mateV(teks).catch(e => {
+            res = await y2mateV(yt).catch(e => {
             reply('_[ ! ] Error Gagal Memasuki Web Y2mate_')
 })
             result = `┏┉⌣ ┈̥-̶̯͡..̷̴✽̶┄┈┈┈┈┈┈┈┈┈┈┉┓
@@ -2545,9 +2620,9 @@ case 'play2':
 └┈┈┈┈┈┈┈┈┈┈┈⌣ ┈̥-̶̯͡..̷̴✽̶⌣ ✽̶
 
 *Data Berhasil Didapatkan!*
-\`\`\`🐲 Title : ${res[0].judul}\`\`\`
-\`\`\`🐲 Ext : MP4\`\`\`
-\`\`\`🐲 Size : ${res[0].size}\`\`\`
+\`\`\🐲⃢⃞⃟ Title : ${res[0].judul}\`\`\`
+\`\`\🐲⃢⃞⃟ Ext : MP4\`\`\`
+\`\`\🐲⃢⃞⃟ Size : ${res[0].size}\`\`\`
 
 _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
 
@@ -2597,8 +2672,8 @@ case 'pinterest':
 case 'fire':      //punya DEFFBOTZZ(Dappa)
   if (args.length < 1) return reply('Link Nya Mana? ')
   if (!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
-  teks = args.join(' ')
-  res = await mediafireDl(teks)
+  fir = args.join(' ')
+  res = await mediafireDl(fir)
   result = `Media Fire Downloader
   Tunggu Proses Mengirim Media......`
   reply(result)
@@ -2607,8 +2682,8 @@ case 'fire':      //punya DEFFBOTZZ(Dappa)
 case 'fire1':
   if (args.length < 1) return reply('Link Nya Mana? ')
   if (!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
-  teks = args.join(' ')
-  res = await mediafireDl(teks)
+  fir = args.join(' ')
+  res = await mediafireDl(fir)
   result = `Media Fire Downloader
   Tunggu Proses Mengirim Media......`
   reply(result)
@@ -2617,8 +2692,8 @@ case 'fire1':
 case 'fire2':
   if (args.length < 1) return reply('Link Nya Mana? ')
   if (!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
-  teks = args.join(' ')
-  res = await mediafireDl(teks)
+  fir = args.join(' ')
+  res = await mediafireDl(fir)
   result = `Media Fire Downloader
   Tunggu Proses Mengirim Media......`
   reply(result)
@@ -2628,8 +2703,8 @@ case 'mediafire':
   if (args.length < 1) return reply('Link Nya Mana? ')
   if (!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
   reply(mess.wait)
-  teks = args.join(' ')
-  res = await mediafireDl(teks)
+  med = args.join(' ')
+  res = await mediafireDl(med)
   result = `Media Fire Downloader
 
 ╔────── ¤ ◎ - ◎ ¤ ──────╗
@@ -2729,7 +2804,7 @@ break
                     if (args.length == 0) return reply(`Example: ${prefix + command} Deffri Gans`)
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/textprome/${command}?apikey=172e5b27c5299af6bfdb45b1&text=${ini_txt}`)
-                    deff.sendMessage(from, ini_buffer, image, { quoted: mek})
+                    deff.sendMessage(from, ini_buffer, image, { quoted: fkontak})
                     break
 //----> 2 TEXT <----//
 
