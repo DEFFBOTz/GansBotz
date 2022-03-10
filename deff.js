@@ -1333,7 +1333,7 @@ menunya = `⌜𝐺𝑅𝑂𝑈𝑃 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}listonline
 ⃝⃤⇝ ${prefix}resetlinkgrup
 
-⌜??𝑇𝐼𝐶𝐾𝐸𝑅 𝑀𝐸𝑁𝑈⌟
+⌜𝑆𝑇𝐼𝐶𝐾𝐸𝑅 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}stiker _reply foto_
 ⃝⃤⇝ ${prefix}semoji 🗿
 ⃝⃤⇝ ${prefix}toimg _reply stiker_
@@ -1386,9 +1386,10 @@ menunya = `⌜𝐺𝑅𝑂𝑈𝑃 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}sadgirl 
 
 ⌜𝐺𝐴𝑀𝐸 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}ttt
 ⃝⃤⇝ ${prefix}truth
 ⃝⃤⇝ ${prefix}dare
+⃝⃤⇝ ${prefix}siapaaku
+⃝⃤⇝ ${prefix}tebakkata
 ⃝⃤⇝ ${prefix}tebakgambar
 
 ⌜𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈⌟
@@ -1490,7 +1491,7 @@ case 'listmenu':
  listMsg = {
  buttonText: 'KLIK DISINI',
  footerText: 'D̡͈̦̤͕ͫͫ͌́̊̆̌́͡ͅE̴̜̳͚̠̥͆ͫͣ́̋̃̄҉̛F̭̭̟̹̈́ͮ̿ͧͭ͋̓͟ͅ͏̴F̸̡̯̮̻̼ͤͫ̂ͨͬ̃̽ͅ҉B̡̡̩̯̜͉̖͂͛̀̊̈́̍̃͠O̸̵̧͖̘̩̣͎̽̈̎ͩͧ̑̈́T̜͉̤̹͚̆ͫ̒͗̋ͥͭ͏͘͘ẕ̦̩̬͈̊̎͛͐̓ͪ̿͏̧҉',
- description: `Hai kak @${sender.split('@')[0]},\n┏┉⌣ ┈̥-̶̯͡..̷̴✽̶\n┆ *INFO BOT*\n└┈┈┈┈┈┈┈┈┈\n\nCreator Bot : De⃟f⃢fri Ga⃢⃟ns❦\nNama Owner : ${ownerName}\nNama Bot : ${botName}\nPrefix : Multi Prefix\nBaterai : Unlimited%\nSpeed : ${latensie.toFixed(4)} second\nLanguage : Javascript`,
+ description: `Hai kak @${sender.split('@')[0]},\n┏┉⌣ ┈̥-̶̯͡..̷̴✽̶\n┆ *INFO BOT*\n└┈┈┈┈┈┈┈┈┈\n\nCreator Bot : De⃟f⃢fri Ga⃢⃟ns❦\nNama Owner : ${ownerName}\nNama Bot : ${botName}\nPrefix : Multi Prefix\nBaterai : ${baterai}%\nSpeed : ${latensie.toFixed(4)} second\nLanguage : Javascript`,
  sections: [
                      {
                       "title": `${tanggal}`,
@@ -1639,9 +1640,10 @@ deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, b
 break
 case 'gamemenu':
 menunya = `⌜𝐺𝐴𝑀𝐸 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}ttt
 ⃝⃤⇝ ${prefix}truth
 ⃝⃤⇝ ${prefix}dare
+⃝⃤⇝ ${prefix}siapaaku
+⃝⃤⇝ ${prefix}tebakkata
 ⃝⃤⇝ ${prefix}tebakgambar
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
@@ -1858,6 +1860,20 @@ deff.sendMessage(from, {displayName: `Deffri Gans`, vcard: vcard3}, contact,)
              reply('Suksess broadcast')
 }
              break
+case 'sewabot':
+menu =
+`*${ucapanWaktu} @${sender.split('@')[0]}*
+
+𝗢 𝗣 𝗘 𝗡
+𝗦 𝗘 𝗪 𝗔 𝗕 𝗢 𝗧
+
+⊛ *1 Minggu : 5.000 ( 5K )*
+⊛ *1 Bulan : 10.000 ( 10K )*
+⊛ *Permanen : 15.000 ( 15K )*`
+teks =
+`*${tanggal}*`
+deff.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: 'ᴍᴇɴᴜ' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: 'ᴏᴡɴᴇʀ' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+break
 case 'runtime':
 textImg(`${runtime(process.uptime())}`)
 break       
@@ -1879,26 +1895,6 @@ buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imag
 contentText:'*Dare*\n\n'+ der,buttons,headerType:4}
 prep = await deff.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftroli})
 deff.relayWAMessage(prep)
-break
-case 'tictactoe':
-case 'ttt':
-if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply('Tag Lawan Anda! ')
-if (isTTT) return reply('Sedang Ada Permainan Di Grub Ini, Harap Tunggu')
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target Lawan!')
-ment = mek.message.extendedTextMessage.contextInfo.mentionedJid
-player1 = sender
-player2 = ment[0]
-angka = ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"]
-id = from
-gilir = player2
-ky_ttt.push({player1,player2,id,angka,gilir})
-deff.sendMessage(from, `*🎳 𝙈𝙚𝙢𝙪𝙡𝙖𝙞 𝙂𝙖𝙢𝙚 𝙏𝙞𝙘𝙩𝙖𝙘𝙩𝙤𝙚 🎲*
-
-[@${player2.split('@')[0]}] 𝑴𝒆𝒏𝒂𝒏𝒕𝒂𝒏𝒈 𝒂𝒏𝒅𝒂 𝒖𝒏𝒕𝒖𝒌 𝒎𝒆𝒏𝒋𝒂𝒅𝒊 𝒍𝒂𝒘𝒂𝒏 𝑮𝒂𝒎𝒆🔥
-𝙆𝙚𝙩𝙞𝙠 𝙔/𝙉 𝙐𝙣𝙩𝙪𝙠 𝙈𝙚𝙣𝙚𝙧𝙞𝙢𝙖 𝘼𝙩𝙖𝙪 𝙈𝙚𝙣𝙤𝙡𝙖𝙠 𝙋𝙚𝙧𝙢𝙖𝙞𝙣𝙖𝙣
-
-Ketik ${prefix}delttc , Untuk Mereset Permainan Yg Ada Di Grup!`, text, {contextInfo: {mentionedJid: [player2]}})
 break
 case 'tebakgambar':
 hx.tebakgambar().then(async data =>{
@@ -2311,8 +2307,9 @@ deff.sendMessage(from,  buttonMessagee, MessageType.buttonsMessage,{
 			}
           break
 case 'add':
-if (!isGroup) return reply("Khusus di grup");
-if (!isGroupAdmins && !mek.key.fromMe) return reply("Khusus admin");
+if (!isGroup) return reply(mess.only.group)
+if (!isGroupAdmins && !mek.key.fromMe) return reply(mess.only.admin)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) {
 entah = arg.split("|")[0]
 entah = entah.replace(new RegExp("[()+-/ +/]", "gi"), "")
@@ -2327,24 +2324,11 @@ case "kick":
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins && !mek.key.fromMe) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (
-mek.message.extendedTextMessage === undefined ||
-mek.message.extendedTextMessage === null
-)
-return reply("Tag target yang ingin di kick!");
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid;
-if (mentioned.length > 1) {
-deff.groupRemove(from, mentioned);
-reply(mess.success);
-} else if (mentioned.length < 1) {
-anu = mek.message.extendedTextMessage.contextInfo.participant;
-deff.groupRemove(from, [anu]);
-reply(mess.success);
-} else {
-deff.groupRemove(from, mentioned);
-reply(mess.success);
-}
-break;
+if(!q)return reply(`*Format salah!*\n\n*Example : ${prefix + command} @tag*`)
+			var kickya = q.split('@')[1] + '@s.whatsapp.net'
+			await deff.groupRemove(from, [kickya])
+			reply(`Succses kick target!`)
+break
 case 'promote' :
 reply(`Fitur Ini Membuat BOT TerBanned`)
 break
@@ -2648,9 +2632,11 @@ case 'mediafire':
   res = await mediafireDl(teks)
   result = `Media Fire Downloader
 
-🌐Nama : ${res[0].nama}
-🥊Ukuran : ${res[0].size}
-🚖Link : ${res[0].link}
+╔────── ¤ ◎ - ◎ ¤ ──────╗
+   Nama : ${res[0].nama}
+   Ukuran : ${res[0].size}
+   Link : ${res[0].link}
+╚────── ¤ ◎ - ◎ ¤ ──────╝
 
 Tunggu Proses Mengirim Media......`
   sendButMessage(from, result, `𝚖𝚊𝚞 𝚍𝚒𝚔𝚒𝚛𝚒𝚖 𝚕𝚎𝚠𝚊𝚝 𝚊𝚙𝚊 𝚔𝚊𝚔\n𝙷𝚊𝚛𝚊𝚙 𝚖𝚎𝚖𝚒𝚕𝚒𝚑 𝚏𝚘𝚛𝚖𝚊𝚝 𝚜𝚎𝚜𝚞𝚊𝚒 𝚕𝚒𝚗𝚔 𝚢𝚐 𝚖𝚊𝚞 𝚍𝚒 𝚍𝚘𝚠𝚗𝚕𝚘𝚊𝚍`, [
@@ -2998,7 +2984,7 @@ return reply(require('util').format(evaluate))
 
 }
 }
-//=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×==×=×=×=×=×=×=×=×=×==×=×=×=×=×=×=×=×=×==×=×=×=×=×=×=×=×=×=×			
+//<------------------------------------->\\			
 if (isCmd) {
 return sendButMessage(from, `Maaf kak @${senderr.split('@')[0]} command ${command} tidak terdaftar dalam menu`, 'BACA MENUNYA\n©deff', [
 {
@@ -3011,7 +2997,7 @@ return sendButMessage(from, `Maaf kak @${senderr.split('@')[0]} command ${comman
 ], {quoted:ftroli})
 }
 }
-//=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×==×=×=×=×=×=×=×=×=×==×=×=×=×=×=×=×=×=×==×=×=×=×=×=×=×=×=×=×			
+//<------------------------------------->\\			
 } catch (e) {
         e = String(e)
             if (!e.includes("this.isZero")) {
