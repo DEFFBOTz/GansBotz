@@ -1825,7 +1825,7 @@ reply(`「 *D̡͈̦̤͕ͫͫ͌́̊̆̌́͡ͅE̴̜̳͚̠̥͆ͫͣ́̋̃̄҉̛F̈́ͮ�
 break
 case 'script':
 case 'sc':
-reply(`Mau Sc Yah Kak?\nNih👉https://youtu.be/ELGyUMeQtiY`)
+reply(`Mau Sc Yah Kak?\nNih👉https://youtu.be/cNn4fB1YQxM`)
 break
 //Khusus Kerang Ajaib Disini YGY
 
@@ -2295,16 +2295,6 @@ case 'toimg':
               fs.unlinkSync(ran)
 })
               break
-case 'ttp':  
-                    if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp 𝘋𝘌𝘍𝘍𝘉𝘖𝘛𝘻`)
-                    anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
-                    deff.sendMessage(from, anu1, sticker, {quoted: mek})
-                    break
-          case 'attp':
-           if (args.length == 0) return reply(`Example: ${prefix + command} Hai`)
-           buffer = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURI(q)}`)
-           deff.sendMessage(from, buffer, sticker, { quoted: mek })
-            break          
 case 'semoji': case'emoji':
 if (!q) return reply('emojinya?')
 					qes = args.join(' ')
@@ -2610,29 +2600,37 @@ case 'ganteng': case 'cantik': case 'jelek': case 'goblok':
 case 'play':
               if (!q) return reply('judulnya?')
              reply(mess.wait)
-             res = await yts(`q`)
-			bgst = `©DEFFBOTz`
-			   thumbInfo = ` 
+              res = await yts(q)
+			   let thumbInfo = ` 
 *Youtube Download*
- *🦈 Judul :* ${res.all[0].title}
- *🐬 ID Video :* ${res.all[0].videoId}
- *🐋 Diupload Pada :* ${res.all[0].ago}
- *🦈 Views :* ${res.all[0].views}
- *🐬 Durasi :* ${res.all[0].timestamp}
- *🐋 Channel :* ${res.all[0].author.name}
- *🎣 Link Channel :* ${res.all[0].author.url}
+ *Judul :* ${res.all[0].title}
+ *ID Video :* ${res.all[0].videoId}
+ *Diupload Pada :* ${res.all[0].ago}
+ *Views :* ${res.all[0].views}
+ *Durasi :* ${res.all[0].timestamp}
+ *Channel :* ${res.all[0].author.name}
+*Link Channel :* ${res.all[0].author.url}
 
 *Silahkan pilih media yang akan di download*
 `
-deff.sendMessage(from, { contentText: `${thumbInfo}`, footerText: `${bgst}`, buttons: [{ buttonId: `${prefix}ytmp3 ${res.all[0].url}`, buttonText: { displayText: 'AUDIO' }, type: 1 },{ buttonId: `${prefix}ytmp4 ${res.all[0].url}`, buttonText: { displayText: 'VIDEO' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
-break              	        	
+buttons = [{buttonId:`${prefix}ytmp4 ${res.all[0].url}`,buttonText:{displayText:'🎥VIDEO'},type:1},{buttonId:`${prefix}ytmp3 ${c}`,buttonText:{displayText:'🎵AUDIO'},type:1}]
+
+imageMessage = (await deff.prepareMessageMedia({url:res.all[0].image},'imageMessage',{thumbnail:Buffer.alloc(0)})).imageMessage
+
+buttonsMessage = {contentText: thumbInfo,footerText:'Silahkan Pilih Jenis File Dibawah Ini',imageMessage,buttons,headerType:4}
+
+prep = await deff.prepareMessageFromContent(from,{buttonsMessage},{})
+
+deff.relayWAMessage(prep)
+break  
 case 'playy':
 case 'ytmp3':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-yt = args.join(' ')
+teks = args.join(' ')
 reply(mess.wait)
+              
 if (!teks.endsWith("-doc")){
-res = await yts(`${yt}`).catch(e => {
+res = await yts(`${teks}`).catch(e => {
 reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
 })
 reply(` Playing ${res.all[0].title}`)
@@ -2669,7 +2667,7 @@ let thumbInfo = `*${botName}*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrl(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
+sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
