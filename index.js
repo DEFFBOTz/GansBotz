@@ -60,7 +60,7 @@ const starts = async (deff = new WAConnection()) => {
         start('2', 'Menghubungkan...')
     })
     deff.on('open', () => {
-        success('2', 'Terhububg')
+        success('2', 'Terhubung Jangan Lupa Subscribe DEFFBOTz')
         setTimeout( () => { 	
 	    	}, 1000)    		    	     	
     })
@@ -138,31 +138,31 @@ deff.sendMessage(`${control.NomorOwner}@s.whatsapp.net`,  buttonMessagee, Messag
 	})
 	/deff.on('group-update', async (anu) => {
 		const metdata = await deff.groupMetadata(anu.jid)
-    	const fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${metdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;deff;;;\nFN:deff\nitem1.TEL;waid=${control.NomorOwner}:${control.NomorOwner}\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
+    	const fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": "https://chat.whatsapp.com/FX7X4g3K6iH0UBEEnmjqXG", "caption": `${metdata.subject}`, 'jpegThumbnail': fs.readFileSync(`./gambar/thumb.jpg`)}}}
     if(anu.announce == 'false'){
     teks = `- [ Group Opened ] -\n\n_Group telah dibuka oleh admin_\n_Sekarang semua member bisa mengirim pesan_`
-    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fgclink})
     console.log(color('|INFO|'), color(`Group Opened In ${metdata.subject}`, 'cyan'))
   }
   else if(anu.announce == 'true'){
     teks = `- [ Group Closed ] -\n\n_Group telah ditutup oleh admin_\n_Sekarang hanya admin yang dapat mengirim pesan_`
-    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fgclink})
     console.log(color('|INFO|'), color(`Group Closed In ${metdata.subject}`,  'cyan'))
   }
   else if(!anu.desc == ''){
     tag = anu.descOwner.split('@')[0] + '@s.whatsapp.net'
     teks = `- [ Group Description Change ] -\n\nDeskripsi Group telah diubah oleh Admin @${anu.descOwner.split('@')[0]}\n• Deskripsi Baru : ${anu.desc}`
-    deff.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}, quoted: fkontakk})
+    deff.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}, quoted: fgclink})
     console.log(color('|INFO|'), color(`Group Description Change In ${metdata.subject}`, 'cyan'))
   }
   else if(anu.restrict == 'false'){
     teks = `- [ Group Setting Change ] -\n\nEdit Group info telah dibuka untuk member\nSekarang semua member dapat mengedit info Group Ini`
-    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fgclink})
     console.log(color('|INFO|'), color(`Group Setting Change In ${metdata.subject}`, 'cyan'))
   }
   else if(anu.restrict == 'true'){
     teks = `- [ Group Setting Change ] -\n\nEdit Group info telah ditutup untuk member\nSekarang hanya admin group yang dapat mengedit info Group Ini`
-    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    deff.sendMessage(metdata.id, teks, MessageType.text, {quoted: fgclink})
     console.log(color('|INFO|'), color(`Group Setting Change In ${metdata.subject}`,  'cyan'))
   }
 })
