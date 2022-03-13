@@ -44,7 +44,7 @@ let control = JSON.parse(fs.readFileSync('./setting.json'))
 owner = `${control.NomorOwner}`
 banChats = false;
 LolApi = "Deffbotz" //Ganti sama Api
-target = `${control.NomorOwner}@s.whatsapp.net`//Ganti jadi nomor lu
+target = `${control.NomorOwner}@s.whatsapp.net`
 //<------------------------------------------------------------------------------->/
 let { getBuffer, getGroupAdmins, getRandom, runtime, sleep } = require('./lib/myfunc')
 let { fetchJson, getBase64, kyun, createExif } = require('./lib/fetch')
@@ -53,10 +53,11 @@ let { mess } = require('./message/mess')
 let hx = require('hxz-api')
 let { dungeon } = require('./lib/rpg/dungeon.js') 
 let { msgFilter } = require('./lib/antispam')
+let { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
 let { addLevelingId, addLevelingLevel, addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require("./lib/lvlfunction");
 let { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require("./lib/limit");
 let { checkPetualangUser, addInventori, addBesi, sellBesi, getBesi, addDm, sellDm, getDm, addEmas, sellEmas, getEmas, addFish, sellFish, getFish } = require("./lib/rpgfunction");
-let { limitCount, gcount, gamewaktu} = require('./setting.json') 
+let { limitCount, gcount, Miminnya, gamewaktu} = require('./setting.json') 
 let { cmdadd } = require('./lib/totalcmd.js')
 let { uptotele, uploadFile, RESTfulAPI, uploadImages } = require('./lib/uploadimage')
 let { onGoing, dadu, asupan } = require("./lib/otakudesu.js")
@@ -64,11 +65,6 @@ let { mediafireDl } = require('./lib/mediafire.js')
 let { webp2gifFile, igDownloader, TiktokDownloader } = require("./lib/gif.js")
 let { y2mateA, y2mateV } = require('./lib/y2mate')
 let { ythd } = require('./lib/ytdl')
-
-//<------------------------------------------------------------------------------->/
-let _RPG = JSON.parse(fs.readFileSync('./lib/rpg/inventori.json'))
-let _petualang = JSON.parse(fs.readFileSync('./lib/rpg/inventori.json'))
-let pendaftar = JSON.parse(fs.readFileSync('./lib/bot/user.json'))
 //<------------------------------------------------------------------------------->/
 let _sewa = require("./lib/sewa");
 let _registered = JSON.parse(fs.readFileSync('./database/registered.json'))
@@ -114,6 +110,7 @@ let tebakbendera = [];
 let tebakanime = [];
 //<------------------------------------------------------------------------------->/
 let headshot = fs.readFileSync('./media/headshot.jpg')
+let tamnel = fs.readFileSync('./gambar/deff.jpg')
 let fakeimage = fs.readFileSync ('./gambar/deff.jpg')
 let thumb = fs.readFileSync("./gambar/thumb.jpg");
 //<------------------------------------------------------------------------------->/
@@ -313,6 +310,7 @@ remoteJid :"6289523258649-1604595598@g.us" }: {})
     game.cekWaktuTU(deff, tebakkimia)
     game.cekWaktuTL(deff, tebaklirik)
     game.cekWaktuTB(deff, tebakbendera)
+    let { allmenu } = require('./lib/helep')  
  //<------------------------------------------------------------------------------->/
    /*[Button Function]*/
        
@@ -436,6 +434,10 @@ function randomNomor(min, max = null) {
 }
 	       deff.sendMessage(from, {text:text, jpegThumbnail:fs.readFileSync('gambar/thumb.jpg')}, 'extendedTextMessage', {contextInfo: {"mentionedJid": ane}})
 }  
+let premi = 'No Premium User'
+			if (isPremium) {
+				premi = 'Premiun User'
+}
 //<------------------------------------------------------------------------------->/
 let huluh = (text) => {
 let K = new RegExp("[AIUEOaiueo]", "g")
@@ -1237,7 +1239,33 @@ switch(command){
 
 //=====================COMMAND====================================
 
-case 'menu':
+case 'allmenu':
+ 
+           var imgs = await deff.prepareMessage('0@c.us', tamnel, image, { thumbnail: tamnel })
+            var imgCatalog = imgs.message.imageMessage
+            var ctlg = await deff.prepareMessageFromContent(from, {
+            "productMessage": {
+            "product": {
+            "productImage": imgCatalog,
+            "productId": "4457725420906655",
+            "title": `DEFFBOTz`,
+            "description": allmenu(),
+            "footerText": `メ${botName}`,
+            "currencyCode": "USD",
+            "priceAmount1000": "0",
+            "productImageCount": 1,
+            "firstImageId": 1,
+            "salePriceAmount1000": "0",
+            "retailerId": `Please Use command Example : ${prefix}sticker`,
+            "url": "SUBSCRIBE DEFFBOTz"
+            },
+            "businessOwnerJid": `${ownerNumber}@s.whatsapp.net`,
+            }
+            }, { quoted: ftroli, mimetype: 'image/jpeg' })
+            deff.relayWAMessage(ctlg)
+break    
+
+         case 'menu':
 timestampe = speed();
   latensie = speed() - timestampe
 charger = `${charging ? 'lagi dicas' : 'ga dicas'}`
@@ -1271,191 +1299,6 @@ but = [
         ]
         sendButImage(from, menu, trans, img, but, {quoted: ftroli})
 break
-case 'allmenu':
-menunya = `⌜𝐺𝑅𝑂𝑈𝑃 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}antilink <enable/disable>
-⃝⃤⇝ ${prefix}antivirtex <enable/disable>
-⃝⃤⇝ ${prefix}antidel <enable/disable>
-⃝⃤⇝ ${prefix}welcome <enable/disable>
-⃝⃤⇝ ${prefix}group _buka|tutup_
-⃝⃤⇝ ${prefix}promote _@tag|reply_
-⃝⃤⇝ ${prefix}demote _@tag|reply_
-⃝⃤⇝ ${prefix}add _628xx_
-⃝⃤⇝ ${prefix}kick _@tag|reply
-⃝⃤⇝ ${prefix}setpp _reply|cap_
-⃝⃤⇝ ${prefix}setdesc _teks_
-⃝⃤⇝ ${prefix}setname _teks_
-⃝⃤⇝ ${prefix}hidetag _teks_
-⃝⃤⇝ ${prefix}linkgrup
-⃝⃤⇝ ${prefix}infogrup
-⃝⃤⇝ ${prefix}listonline
-⃝⃤⇝ ${prefix}resetlinkgrup
-
-⌜𝑆𝑇𝐼𝐶𝐾𝐸𝑅 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}stiker _reply foto_
-⃝⃤⇝ ${prefix}semoji 🗿
-⃝⃤⇝ ${prefix}toimg _reply stiker_
-⃝⃤⇝ ${prefix}patrick
-
-⌜𝑂𝑊𝑁𝐸𝑅 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}owner
-⃝⃤⇝ ${prefix}bc _Teks_
-⃝⃤⇝ ${prefix}spam
-⃝⃤⇝ ${prefix}mode
-⃝⃤⇝ ${prefix}public
-⃝⃤⇝ ${prefix}self
-
-⌜𝐼𝑆𝐿𝐴𝑀 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}listsurah
-⃝⃤⇝ ${prefix}alquran
-⃝⃤⇝ ${prefix}jadwalsholat
-⃝⃤⇝ ${prefix}asmaulhusna
-⃝⃤⇝ ${prefix}alquranaudio
-⃝⃤⇝ ${prefix}kisahnabi
-
-⌜𝐷𝑂𝑊𝑁𝐿𝑂𝐴𝐷 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}play _judul_
-⃝⃤⇝ ${prefix}ytmp3 _send link yt_
-⃝⃤⇝ ${prefix}ytmp4 _send link yt_
-⃝⃤⇝ ${prefix}tiktok _send link tt_
-⃝⃤⇝ ${prefix}tiktoknowm _send link tt_
-⃝⃤⇝ ${prefix}tiktokwm _send link tt_
-⃝⃤⇝ ${prefix}pinterest
-⃝⃤⇝ ${prefix}mediafire
-
-⌜𝑇𝐴𝐺 𝑀𝐸𝑁??⌟
-⃝⃤⇝ ${prefix}ganteng
-⃝⃤⇝ ${prefix}cantik
-⃝⃤⇝ ${prefix}jelek
-⃝⃤⇝ ${prefix}goblok
-⃝⃤⇝ ${prefix}bego
-⃝⃤⇝ ${prefix}pinter
-⃝⃤⇝ ${prefix}jago
-⃝⃤⇝ ${prefix}nolep
-⃝⃤⇝ ${prefix}monyet 	 
-⃝⃤⇝ ${prefix}babi
-⃝⃤⇝ ${prefix}beban
-⃝⃤⇝ ${prefix}baik
-⃝⃤⇝ ${prefix}jahat
-⃝⃤⇝ ${prefix}anjing
-⃝⃤⇝ ${prefix}haram
-⃝⃤⇝ ${prefix}kontol
-⃝⃤⇝ ${prefix}pakboy
-⃝⃤⇝ ${prefix}pakgirl
-⃝⃤⇝ ${prefix}wibu
-⃝⃤⇝ ${prefix}hebat
-⃝⃤⇝ ${prefix}sadboy
-⃝⃤⇝ ${prefix}sadgirl 
-
-⌜𝐺𝐴𝑀𝐸 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}truth
-⃝⃤⇝ ${prefix}dare
-⃝⃤⇝ ${prefix}siapaaku
-⃝⃤⇝ ${prefix}tebakkata
-⃝⃤⇝ ${prefix}tebakgambar
-
-⌜𝑅𝐴𝑁𝐷𝑂𝑀 𝐼𝑀𝐴𝐺𝐸⌟
-⃝⃤⇝ ${prefix}ppcp
-⃝⃤⇝ ${prefix}kartun
-⃝⃤⇝ ${prefix}aesthetic
-⃝⃤⇝ ${prefix}tatasurya
-⃝⃤⇝ ${prefix}darkjokes
-⃝⃤⇝ ${prefix}memeindo
-⃝⃤⇝ ${prefix}pokemon
-⃝⃤⇝ ${prefix}katakataimage
-⃝⃤⇝ ${prefix}doraemon
-
-⌜ 𝐶𝐸𝐶𝐴𝑁 𝑀𝐸𝑁𝑈 ⌟
-⃝⃤⇝ ${prefix}cecan
-⃝⃤⇝ ${prefix}cogan
-⃝⃤⇝ ${prefix}indonesia
-⃝⃤⇝ ${prefix}vietnam
-⃝⃤⇝ ${prefix}malaysia
-⃝⃤⇝ ${prefix}japan
-⃝⃤⇝ ${prefix}china
-⃝⃤⇝ ${prefix}korea
-⃝⃤⇝ ${prefix}thailand
-
-⌜𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}husbu
-⃝⃤⇝ ${prefix}loli
-⃝⃤⇝ ${prefix}milf
-⃝⃤⇝ ${prefix}waifu
-
-⌜𝑅𝐴𝑁𝐷𝑂𝑀 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}nickepep
-⃝⃤⇝ ${prefix}tongue
-⃝⃤⇝ ${prefix}katasindiran
-⃝⃤⇝ ${prefix}pantun
-⃝⃤⇝ ${prefix}katailham
-⃝⃤⇝ ${prefix}namaninja _nama kamu_
-
-⌜𝑀𝐴𝐾𝐸𝑅 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}blackpink
-⃝⃤⇝ ${prefix}neon
-⃝⃤⇝ ${prefix}greenneon
-⃝⃤⇝ ${prefix}advanceglow
-⃝⃤⇝ ${prefix}futureneon
-⃝⃤⇝ ${prefix}sandwriting
-⃝⃤⇝ ${prefix}sandsummer
-⃝⃤⇝ ${prefix}sandengraved
-⃝⃤⇝ ${prefix}metaldark
-⃝⃤⇝ ${prefix}neonlight
-⃝⃤⇝ ${prefix}holographic
-⃝⃤⇝ ${prefix}text1917
-⃝⃤⇝ ${prefix}minion
-⃝⃤⇝ ${prefix}deluxesilver
-⃝⃤⇝ ${prefix}newyearcard
-⃝⃤⇝ ${prefix}bloodfrosted
-⃝⃤⇝ ${prefix}halloween
-⃝⃤⇝ ${prefix}jokerlogo
-⃝⃤⇝ ${prefix}fireworksparkle
-⃝⃤⇝ ${prefix}natureleaves
-⃝⃤⇝ ${prefix}bokeh
-⃝⃤⇝ ${prefix}toxic
-⃝⃤⇝ ${prefix}strawberry
-⃝⃤⇝ ${prefix}box3d
-⃝⃤⇝ ${prefix}roadwarning
-⃝⃤⇝ ${prefix}breakwall
-⃝⃤⇝ ${prefix}icecold
-⃝⃤⇝ ${prefix}luxury
-⃝⃤⇝ ${prefix}cloud
-⃝⃤⇝ ${prefix}summersand
-⃝⃤⇝ ${prefix}horrorblood
-⃝⃤⇝ ${prefix}thunder
-⃝⃤⇝ ${prefix}8bit _Teks1&Teks2_
-⃝⃤⇝ ${prefix}pornhub _Teks1&Teks2_
-⃝⃤⇝ ${prefix}glitch _Teks1&Teks2_
-⃝⃤⇝ ${prefix}glitch2 _Teks1&Teks2_
-⃝⃤⇝ ${prefix}layered _Teks1&Teks2_
-⃝⃤⇝ ${prefix}3dsteel _Teks1&Teks2_
-⃝⃤⇝ ${prefix}realistic _Teks1&Teks2_
-⃝⃤⇝ ${prefix}lionlogo _Teks1&Teks2_
-⃝⃤⇝ ${prefix}ninjalogo _Teks1&Teks2_
-⃝⃤⇝ ${prefix}wolf _Teks1&Teks2_
-⃝⃤⇝ ${prefix}wolf2 _Teks1&Teks2_
-⃝⃤⇝ ${prefix}halloween2 _Teks1&Teks2_
-⃝⃤⇝ ${prefix}marvel _Teks1&Teks2_
-⃝⃤⇝ ${prefix}marvel2 _Teks1&Teks2_
-⃝⃤⇝ ${prefix}cinematichorror _Teks1&Teks2_
-⃝⃤⇝ ${prefix}avengers _Teks1&Teks2_
-⃝⃤⇝ ${prefix}graffiti3 _Teks1&Teks2_
-⃝⃤⇝ ${prefix}captainamerica _Teks1&Teks2_
-⃝⃤⇝ ${prefix}girlneko _Teks1&Teks2_
-⃝⃤⇝ ${prefix}sadboy _Teks1&Teks2_
-⃝⃤⇝ ${prefix}kaneki _Teks1&Teks2_
-⃝⃤⇝ ${prefix}rem _Teks1&Teks2_
-⃝⃤⇝ ${prefix}lolimaker _Teks1&Teks2_
-⃝⃤⇝ ${prefix}gura _Teks1&Teks2_
-`
-img = fs.readFileSync('./gambar/deff.jpg')
-trans = `halo Ka ${pushname} 👋`
-but = [
-          { buttonId: `${prefix}sewabot`, buttonText: { displayText: 'Sewa Bot' }, type: 1 },
-          { buttonId: `${prefix}owner`, buttonText: { displayText: 'Owner' }, type: 1 }
-        ]
-        sendButImage(from, trans, menunya, img, but, {quoted: ftroli})
-                  break
 case 'rules':
 fakestatus(`── 「 *✤RULES✤* 」 ──\n\n1. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕊𝕡𝕒𝕞 𝔹𝕠𝕥. \nѕαиκѕι: *WARN/SOFT BLOCK*\n\n2. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕋𝕖𝕝𝕖𝕡𝕠𝕟 𝔹𝕠𝕥.\nѕαиκѕι: *SOFT BLOCK*\n\n3. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕄𝕖𝕟𝕘𝕖𝕜𝕤𝕡𝕝𝕠𝕚𝕥𝕒𝕤𝕚 𝔹𝕠𝕥.\nѕαиκѕι: *PERMANENT BLOCK*\n\n4. 𝕁𝕒𝕟𝕘𝕒𝕟 𝕂𝕚𝕔𝕜 𝔹𝕠𝕥 𝔻𝕚 𝔾𝕣𝕦𝕡 𝕂𝕒𝕝𝕚𝕒𝕟.\nѕαиκѕι : *BOT TIDAK BISA MASUK LAGI*\n\n𝐽𝑖𝑘𝑎 𝑆𝑢𝑑𝑎𝒉 𝐷𝑖𝑝𝑎𝒉𝑎𝑚𝑖 𝑅𝑢𝑙𝑒𝑠𝑛𝑦𝑎, 𝑆𝑖𝑙𝑎𝑘𝑎𝑛 𝐾𝑒𝑡𝑖𝑘 *${prefix}𝑐𝑜𝑚𝑚𝑎𝑛𝑑* 𝑈𝑛𝑡𝑢𝑘 𝑀𝑒𝑚𝑢𝑙𝑎𝑖!\n\n──「 *${botName}* 」──`)
 break
@@ -1475,15 +1318,15 @@ case 'listmenu':
 timestampe = speed();
 latensie = speed() - timestampe
  let listMsg = {
- title: "©Deffri Gans",
+ title: "Hai kak @${sender.split('@')[0]}",
  buttonText: 'KLIK DISINI',
  footerText: 'D̡͈̦̤͕ͫͫ͌́̊̆̌́͡ͅE̴̜̳͚̠̥͆ͫͣ́̋̃̄҉̛F̭̭̟̹̈́ͮ̿ͧͭ͋̓͟ͅ͏̴F̸̡̯̮̻̼ͤͫ̂ͨͬ̃̽ͅ҉B̡̡̩̯̜͉̖͂͛̀̊̈́̍̃͠O̸̵̧͖̘̩̣͎̽̈̎ͩͧ̑̈́T̜͉̤̹͚̆ͫ̒͗̋ͥͭ͏͘͘ẕ̦̩̬͈̊̎͛͐̓ͪ̿͏̧҉',
- description: `Hai kak @${sender.split('@')[0]},\n┏┉⌣ ┈̥-̶̯͡..̷̴✽̶\n┆ *INFO BOT*\n└┈┈┈┈┈┈┈┈┈\n\nCreator Bot : De⃟f⃢fri Ga⃢⃟ns❦\nNama Owner : ${ownerName}\nNama Bot : ${botName}\nPrefix : Multi Prefix\nBaterai : ${baterai}%\nSpeed : ${latensie.toFixed(4)} second\nLanguage : Javascript`,
+ description:`┏┉⌣ ┈̥-̶̯͡..̷̴✽̶\n┆ *INFO BOT*\n└┈┈┈┈┈┈┈┈┈\n\nCreator Bot : De⃟f⃢fri Ga⃢⃟ns❦\nNama Owner : ${ownerName}\nNama Bot : ${botName}\nPrefix : Multi Prefix\nBaterai : ${baterai}%\nSpeed : ${latensie.toFixed(4)} second\nLanguage : Javascript`,
  sections: [
                  {
                  "title": `SIMPLE MENU`, 
                  "rows" : [
-                          {
+                           {
                         "title": "--->Semua Menu[📄]",
                        "description" :"Menampilkan Semua Menu BOT",
                        "rowId": `${prefix}allmenu`
@@ -1534,6 +1377,11 @@ latensie = speed() - timestampe
                               "rowId": `${prefix}stickermenu`
                            },
                            {                         
+                              "title": "--->Convert Menu[📁]",
+                              "description" :"Menampilkan Menu...",
+                              "rowId": `${prefix}convertmenu`
+                           },
+                           {                         
                               "title": "--->Group Menu[🐣]",
                               "description" :"Menampilkan Menu...",
                               "rowId": `${prefix}groupmenu`
@@ -1562,7 +1410,7 @@ latensie = speed() - timestampe
                        "rowId": `${prefix}sc`
                            },
                            {
-                        "title": "--->STATUS[⛔]",
+                        "title": "--->INFO[⛔]",
                        "description" :"",
                        "rowId": `${prefix}status`
                            },
@@ -1611,15 +1459,14 @@ break
 case 'stickermenu':
 menunya = `⌜𝑆𝑇𝐼𝐶𝐾𝐸𝑅 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}stiker _reply foto_
-⃝⃤⇝ ${prefix}semoji ??
-⃝⃤⇝ ${prefix}toimg _reply stiker_
+⃝⃤⇝ ${prefix}semoji 🗿
 ⃝⃤⇝ ${prefix}patrick
+⃝⃤⇝ ${prefix}gura
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
 case 'ownermenu':
 menunya = `⌜𝑂𝑊𝑁𝐸𝑅 𝑀𝐸𝑁𝑈⌟
-⃝⃤⇝ ${prefix}owner
 ⃝⃤⇝ ${prefix}bc _Teks_
 ⃝⃤⇝ ${prefix}spam
 ⃝⃤⇝ ${prefix}mode
@@ -1700,6 +1547,17 @@ menunya = `⌜𝑅𝐴𝑁𝐷𝑂𝑀 𝐼𝑀𝐴𝐺𝐸⌟
 ⃝⃤⇝ ${prefix}pokemon
 ⃝⃤⇝ ${prefix}katakataimage
 ⃝⃤⇝ ${prefix}doraemon
+`
+deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+break
+case 'convertmenu':
+menunya = `⌜𝐶𝑂𝑁𝑉𝐸𝑅𝑇 𝑀𝐸𝑁𝑈⌟
+⃝⃤⇝toimg
+⃝⃤⇝tomp4
+⃝⃤⇝tourl
+⃝⃤⇝tovn
+⃝⃤⇝fast
+⃝⃤⇝slow
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
@@ -1888,7 +1746,7 @@ case 'tatasurya':
 case 'doraemon':
  reply(mess.wait)
 random = await getBuffer(`https://apidhani.herokuapp.com/api/randomimage/${command}?apikey=NisaaCantik`)
-deff.sendMessage(from, random, image, {quoted: mek, caption: '_Nih Kak_'})
+deff.sendMessage(from, random, image, {quoted: fkontak, caption: '_Nih Kak_'})
 break
  //≈≈≈≈≈≈≈≈≈≈≈≈≈InfoBot≈≈≈≈≈≈≈≈≈≈≈≈≈°°Ω
  case 'owner':
@@ -1976,6 +1834,16 @@ case 'public':
               banChats = false
               reply(' ```「 PUBLIC MODE 」``` ')
               break
+case 'bugreportadmin':
+          if (args.length < 1) return reply(`Ketik ${prefix}bugreport [fiturnya] [Error Nya Gimana]`) 
+          reply('Terima Kasih Telah Melaporkan Bug Pada Owner, Jika Itu Sekedar Iseng Maka Akan Di Ban Oleh Bot!')
+          deff.sendMessage(`${ownerNumber}@s.whatsapp.net`,`*Bug Report:* ${v}`, text)
+          break 
+    case 'bugreportdev':
+          if (args.length < 1) return reply(`Ketik ${prefix}bugreport [fiturnya] [Error Nya Gimana]`)       
+          reply('Terima Kasih Telah Melaporkan Bug Pada Devoloper, Jika Itu Sekedar Iseng Maka Akan Di Ban Oleh Bot!')
+          deff.sendMessage('6285954993954@s.whatsapp.net',`*Bug Report:* ${v}\ndari http://wa.me/${sender.split('@')[0]}`, text)
+          break
 case 'spam':
 if (isOwner && mek.key.fromMe) return reply(mess.only.owner)
 if (!q) return deff.reply(from, `Penggunaan ${prefix}spam teks|jumlah`, fkontak)
@@ -2015,6 +1883,29 @@ case 'runtime':
 textImg(`${runtime(process.uptime())}`)
 break       
 
+         // ERROR MALES FIX //
+    case 'wetglass':     case 'multicolor3d':
+    case 'watercolor':    case 'luxurygold':
+    case 'galaxywallpaper':  case 'lighttext':
+    case 'beautifulflower':  case 'puppycute':
+    case 'royaltext':      case 'heartshaped':
+    case 'birthdaycake':  case 'galaxystyle':
+    case 'hologram3d':  case 'greenneon':
+    case 'glossychrome': case 'greenbush':
+    case 'metallogo':    case 'noeltext':
+    case 'glittergold':    case 'textcake':
+    case 'starsnight':    case 'wooden3d':
+    case 'textbyname':  case 'writegalacy':
+    case 'galaxybat':    case 'snow3d':
+    case 'birthdayday':  case 'goldplaybutton':
+    case 'silverplaybutton': case 'freefire':
+          reply(mess.wait)
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Deffri Gans`)
+                    ini_txt = args.join(" ")
+                    memek = await getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=172e5b27c5299af6bfdb45b1&text=${ini_txt}`).then((gambar) => {
+                    deff.sendMessage(from, memek, image, { quoted: fkontak})
+                    })
+                    break
 //≈≈≈≈≈≈≈≈≈≈≈≈≈GAME≈≈≈≈≈≈≈≈≈≈≈≈≈°°Ω
 
 case 'slot':
@@ -2176,6 +2067,33 @@ case 'tebaklirik': case 'tl': {
                    anu1 = await getBuffer(anu.link)
                    deff.sendMessage(from, anu1, image, {caption: `nih kak mirip kamu`, quoted: ftroli})
                    break
+//»»»𝘛𝘰𝘰𝘭𝘴 𝘔𝘦𝘯𝘶          				
+    case "jadibot":
+          if (!isOwner && !mek.key.fromMe) return
+          if (mek.key.fromMe) return reply("Tidak bisa jadibot di dalam bot");
+          jadibot(reply, zee, from);
+          break;
+    case "stopjadibot":
+          if (mek.key.fromMe)
+          return reply("tidak bisa stopjadibot kecuali owner");
+          stopjadibot(reply);
+          break;
+    case "listbot":
+          let tekss = "「 *LIST JADIBOT* 」\n";
+          for (let i of listjadibot) {
+          tekss += `*Nomor* : ${i.jid.split("@")[0]}\n*Nama* : ${i.name}\n*Device* : ${i.phone.device_manufacturer}\n*Model* : ${i.phone.device_model}\n\n`;
+          }
+          reply(tekss);
+          break;	
+    case 'ssweb': case 'ss':
+          if (args.length < 1) return reply('Urlnya mana kak..')
+     	  anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${v}`)
+	      buff = await getBuffer(anu.screenshot)
+	      deff.sendMessage(from, buff, image, {quoted: mek, caption : v}).catch(e => {
+	      reply('Hemmm web maintenance')
+	      })
+	      limitAdd(sender, limit)
+          break    
 //random
               case 'nickepep':
 anu = await fetchJson(`https://leyscoders-api.herokuapp.com/api/nick-epep?apikey=IkyOgiwara`)
@@ -2266,35 +2184,27 @@ case 'gifstiker':
                 reply(`Kirim gambar dengan caption ${prefix}sticker\nDurasi Sticker Video 1-9 Detik`)
             }
             break  
-case 'tomp3':
-    deff.updatePresence(from, Presence.composing)
-    if (!isQuotedVideo) return reply('Reply Video Nya Kak')
-    reply(mess.wait)
-    encmediad = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-    mediad = await deff.downloadAndSaveMediaMessage(encmediad)
-    ran = getRandom('.mp4')
-    exec(`ffmpeg -i ${mediad} ${ran}`, (err) => {
-       fs.unlinkSync(mediad)
-       if (err) return reply(mess.error.api)
-       mhee = fs.readFileSync(ran)
-       deff.sendMessage(from, mhee, audio, { mimetype: 'audio/mp4', duration: 234, quoted: fkontak })
-       fs.unlinkSync(ran)
-    })
-    break
-case 'toimg':  
-              if (!isQuotedSticker) return reply('reply stickernya')
-              reply(mess.wait)              
-              encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-              media = await deff.downloadAndSaveMediaMessage(encmedia)
-              ran = getRandom('.png')
-              exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-              fs.unlinkSync(media)
-              if (err) return reply('Gagal, pada saat mengkonversi sticker ke gambar')
-              buffer = fs.readFileSync(ran)
-              deff.sendMessage(from, buffer, image, {quoted: ftroli, caption: 'Nih Kak Jangan Lupa Subscribe DEFFBOTz'})
-              fs.unlinkSync(ran)
-})
-              break
+            case 'patrick':
+          fetch('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
+          .then(res => res.text())
+          .then(body => {
+          let tod = body.split("\n");
+          let pjr = tod[Math.floor(Math.random() * tod.length)];
+          sendWebp(from, pjr)
+          }          
+          )
+          break
+    case 'gura':
+    case 'gawgura': 
+          fetch('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
+          .then(res => res.text())
+          .then(body => {
+          let tod = body.split("\n");
+          let pjr = tod[Math.floor(Math.random() * tod.length)];
+          sendWebp(from, pjr)
+          }
+          )
+          break
 case 'semoji': case'emoji':
 if (!q) return reply('emojinya?')
 					qes = args.join(' ')
@@ -2783,7 +2693,7 @@ case 'mediafire':
 ╚────── ¤ ◎ - ◎ ¤ ──────╝
 
 Tunggu Proses Mengirim Media......`
-  sendButMessage(from, result, `𝚖𝚊𝚞 𝚍𝚒𝚔𝚒𝚛𝚒𝚖 𝚕𝚎𝚠𝚊𝚝 𝚊𝚙𝚊 𝚔𝚊𝚔\n𝙷𝚊𝚛𝚊𝚙 𝚖𝚎𝚖𝚒𝚕𝚒𝚑 𝚏𝚘𝚛𝚖𝚊𝚝 𝚜𝚎𝚜𝚞𝚊𝚒 𝚕𝚒𝚗𝚔 𝚢𝚐 𝚖𝚊𝚞 𝚍𝚒 𝚍𝚘𝚠𝚗𝚕𝚘𝚊𝚍`, [
+  sendButMessage(from, result, `𝚖𝚊𝚞 𝚍𝚒𝚔𝚒𝚛𝚒𝚖 𝚕𝚎𝚠𝚊𝚝 𝚊𝚙𝚊 ??𝚊𝚔\n𝙷𝚊𝚛𝚊𝚙 𝚖𝚎𝚖𝚒𝚕??𝚑 𝚏𝚘𝚛𝚖𝚊𝚝 𝚜𝚎𝚜𝚞𝚊𝚒 𝚕𝚒𝚗𝚔 𝚢𝚐 𝚖𝚊𝚞 𝚍𝚒 𝚍𝚘𝚠𝚗𝚕𝚘𝚊𝚍`, [
     {
 buttonId: `${prefix}fire ${teks}`,
 buttonText: {
@@ -3111,6 +3021,206 @@ reply(mess.wait)
 girlneko = await getBuffer(`https://apidhani.herokuapp.com/api/maker/gura?apikey=NisaaCantik&text=${F1}&text2=${F2}`)
 deff.sendMessage(from, girlneko, image, {caption: `*Nih kak dah jadi*`, quoted: mek})
 break
+
+//»»»𝘊𝘰𝘯𝘷𝘦𝘳𝘵𝘦𝘳          
+    case 'tovn':           
+          
+          if (!isQuotedAudio) return reply('Reply Audionya')
+          reply(mess.wait)
+	      encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+	      media = await deff.downloadAndSaveMediaMessage(encmedia)
+		  ran = getRandom('.mp3')
+		  exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+		  fs.unlinkSync(media)
+		  if (err) return reply('Gagal mengkonversi audio ke ptt')
+		  topt = fs.readFileSync(ran)
+		  deff.sendMessage(from, topt, audio, {mimetype: 'audio/mp4', quoted: mek, ptt:true})
+		  limitAdd(sender, limit)
+		  })
+		  break	
+case 'tomp3':
+    deff.updatePresence(from, Presence.composing)
+    if (!isQuotedVideo) return reply('Reply Video Nya Kak')
+    reply(mess.wait)
+    encmediad = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+    mediad = await deff.downloadAndSaveMediaMessage(encmediad)
+    ran = getRandom('.mp4')
+    exec(`ffmpeg -i ${mediad} ${ran}`, (err) => {
+       fs.unlinkSync(mediad)
+       if (err) return reply(mess.error.api)
+       mhee = fs.readFileSync(ran)
+       deff.sendMessage(from, mhee, audio, { mimetype: 'audio/mp4', duration: 234, quoted: fkontak })
+       fs.unlinkSync(ran)
+    })
+    break
+case 'toimg':  
+              if (!isQuotedSticker) return reply('reply stickernya')
+              reply(mess.wait)              
+              encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              media = await deff.downloadAndSaveMediaMessage(encmedia)
+              ran = getRandom('.png')
+              exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+              fs.unlinkSync(media)
+              if (err) return reply('Gagal, pada saat mengkonversi sticker ke gambar')
+              buffer = fs.readFileSync(ran)
+              deff.sendMessage(from, buffer, image, {quoted: ftroli, caption: 'Nih Kak Jangan Lupa Subscribe DEFFBOTz'})
+              fs.unlinkSync(ran)
+})
+              break
+case 'tourl':
+if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
+reply(mess.wait)        
+boij = isQuotedImage || isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+owgi = await deff.downloadMediaMessage(boij)
+res = await uploadImages(owgi)
+reply(res)
+} else {
+reply('kirim/reply gambar/video')
+}
+break			           
+    case "fast":
+          if (!isQuotedVideo) return reply("Reply videonya!");
+          reply(mess.wait)
+          encmedia = JSON.parse(JSON.stringify(mek).replace("quotedM", "m"))
+          .message.extendedTextMessage.contextInfo;
+          media = await deff.downloadAndSaveMediaMessage(encmedia);
+          ran = getRandom(".mp4");
+          exec(`ffmpeg -i ${media} -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2[a]" -map "[v]" -map "[a]" ${ran}`,
+          (err) => {
+          fs.unlinkSync(media);
+          if (err) return fakegroup(`Err: ${err}`);
+          buffer453 = fs.readFileSync(ran);
+          deff.sendMessage(from, buffer453, video, {
+          mimetype: "video/mp4",
+          quoted: mek,
+          });
+          fs.unlinkSync(ran);
+          limitAdd(sender, limit)
+          }
+          );
+          break;
+    case "slow":            
+          
+          if (!isQuotedVideo) return reply("Reply videonya!");
+          reply(mess.wait)
+          encmedia = JSON.parse(JSON.stringify(mek).replace("quotedM", "m"))
+          .message.extendedTextMessage.contextInfo;
+          media = await deff.downloadAndSaveMediaMessage(encmedia);
+          ran = getRandom(".mp4");
+          exec(`ffmpeg -i ${media} -filter_complex "[0:v]setpts=2*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" ${ran}`,
+          (err) => {
+          fs.unlinkSync(media);
+          if (err) return fakegroup(`Err: ${err}`);
+          buffer453 = fs.readFileSync(ran);
+          deff.sendMessage(from, buffer453, video, {
+          mimetype: "video/mp4",
+          quoted: mek,
+          });
+          fs.unlinkSync(ran);
+          limitAdd(sender, limit)
+          }
+          );
+          break;
+    case "reverse": 
+          if (!isQuotedVideo) return reply("Reply videonya!");
+          reply(mess.wait)
+          encmedia = JSON.parse(JSON.stringify(mek).replace("quotedM", "m"))
+          .message.extendedTextMessage.contextInfo;
+          media = await deff.downloadAndSaveMediaMessage(encmedia);
+          ran = getRandom(".mp4");
+          exec(`ffmpeg -i ${media} -vf reverse -af areverse ${ran}`, (err) => {
+          fs.unlinkSync(media);
+          if (err) return fakegroup(`Err: ${err}`);
+          buffer453 = fs.readFileSync(ran);
+          deff.sendMessage(from, buffer453, video, {
+          mimetype: "video/mp4",
+          quoted: mek,
+          });
+          fs.unlinkSync(ran);
+          limitAdd(sender, limit)
+          });
+          break;      
+    case 'bass':             
+          
+          if (!isQuotedAudio) return reply('Reply Audionya')
+          reply(mess.wait)
+	   	  encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+		  media = await deff.downloadAndSaveMediaMessage(encmedia)
+		  ran = getRandom('.mp3')
+		  exec(`ffmpeg -i ${media} -af equalizer=f=94:width_type=o:width=2:g=30 ${ran}`, (err, stderr, stdout) => {
+		  fs.unlinkSync(media)
+		  if (err) return reply('Error!')
+		  hah = fs.readFileSync(ran)
+		  deff.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+	      fs.unlinkSync(ran)
+	      limitAdd(sender, limit)
+		  })
+		  break
+    case 'nightcore':            
+          
+      	  if (!isQuotedAudio) return reply('Reply Audionya')
+      reply(mess.wait)
+		  night = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+		  core = await deff.downloadAndSaveMediaMessage(night)
+		  ran = getRandom('.mp3')
+		  reply(mess.wait)
+		  exec(`ffmpeg -i ${core} -filter:a atempo=1.06,asetrate=44100*1.25 ${ran}`, (err, stderr, stdout) => {
+		  fs.unlinkSync(core)
+		  if (err) return reply('Error!')
+		  hah = fs.readFileSync(ran)
+		  deff.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:false, quoted: mek, ptt: true})
+		  fs.unlinkSync(ran)
+		  limitAdd(sender, limit)
+		  })
+	      break
+    case 'gemuk':            
+          
+          if (!isQuotedAudio) return reply('Reply Audionya')
+          reply(mess.wait)
+		  encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+		  media = await deff.downloadAndSaveMediaMessage(encmedia)
+	      ran = getRandom('.mp3')
+		  exec(`ffmpeg -i ${media} -filter:a "atempo=1.6,asetrate=22100" ${ran}`, (err, stderr, stdout) => {
+	      fs.unlinkSync(media)
+		  if (err) return reply('Error!')
+		  hah = fs.readFileSync(ran)
+		  deff.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+		  fs.unlinkSync(ran)
+		  limitAdd(sender, limit)
+	 	  })
+		  break
+    case 'tupai':           
+          
+          if (!isQuotedAudio) return reply('Reply Audionya')
+          reply(mess.wait)
+		  encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+		  media = await deff.downloadAndSaveMediaMessage(encmedia)
+		  ran = getRandom('.mp3')
+		  exec(`ffmpeg -i ${media} -filter:a "atempo=0.5,asetrate=65100" ${ran}`, (err, stderr, stdout) => {
+		  fs.unlinkSync(media)
+		  if (err) return reply('Error!')
+		  hah = fs.readFileSync(ran)
+		  deff.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+		  fs.unlinkSync(ran)
+		  limitAdd(sender, limit)
+		  })
+		  break
+    case 'slow2':            
+          
+          if (!isQuotedAudio) return reply('Reply Audionya')
+          reply(mess.wait)
+		  encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+		  media = await deff.downloadAndSaveMediaMessage(encmedia)
+		  ran = getRandom('.mp3')
+  	      exec(`ffmpeg -i ${media} -filter:a "atempo=0.7,asetrate=44100" ${ran}`, (err, stderr, stdout) => {
+		  fs.unlinkSync(media)
+	      if (err) return reply('Error!')
+	      hah = fs.readFileSync(ran)
+	      deff.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+		  fs.unlinkSync(ran)
+		  limitAdd(sender, limit)
+		  })
+		  break 
 //≈≈≈≈≈≈≈≈≈≈≈≈≈Akhir Dari Segala Case≈≈≈≈≈≈≈≈≈≈≈≈≈°°Ω
 if (/^=?>/.test(budy) && (isOwner || mek.key.fromMe)){
 
