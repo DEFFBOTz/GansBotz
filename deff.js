@@ -1725,16 +1725,17 @@ case 'japan':
 case 'malaysia':
 reply(mess.wait)
 cecan = await getBuffer(`https://apidhani.herokuapp.com/api/cecan/${command}?apikey=NisaaCantik`)
-deff.sendMessage(from, cecan, image, {quoted: mek, caption: '_Nih Kak_'})
+deff.sendMessage(from, cecan, image, {quoted: ftroli, caption: '_Nih Kak_'})
 break
 //------------------------------Random Image--------------------------\\
 case 'ppcp':
 case 'ppcouple':
-anu = await fetchJson(`https://apidhani.herokuapp.com/api/random/ppcouple?apikey=NisaaCantik}`)
+fakeitem(mess.wait)
+anu = await fetchJson(`https://apidhani.herokuapp.com/api/randomimage/ppcouple?apikey=NisaaCantik`)
 buff1 = await getBuffer (anu.result.male)
-deff.sendMessage(from, buff1, image, {quoted: mek, caption: '_Nih kak cowoknya_'})
+deff.sendMessage(from, buff1, image, {quoted: fkontak, caption: '_Nih kak cowoknya_'})
 buff2 =await getBuffer (anu.result.female)
-deff.sendMessage(from, buff2, image, {quoted: mek, caption: '_Nih kak ceweknya_'})
+deff.sendMessage(from, buff2, image, {quoted: fkontak, caption: '_Nih kak ceweknya_'})
 break
 case 'kartun':
 case 'katakataimage':
@@ -2089,7 +2090,7 @@ case 'tebaklirik': case 'tl': {
           if (args.length < 1) return reply('Urlnya mana kak..')
      	  anu = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${v}`)
 	      buff = await getBuffer(anu.screenshot)
-	      deff.sendMessage(from, buff, image, {quoted: mek, caption : v}).catch(e => {
+	      deff.sendMessage(from, buff, image, {quoted: ftroli, caption : v}).catch(e => {
 	      reply('Hemmm web maintenance')
 	      })
 	      limitAdd(sender, limit)
@@ -2449,7 +2450,7 @@ var pic = await deff.getProfilePicture(from)
 var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 let ingfo = `*G R O U P I N F O*\n\n*Name :* ${groupName}\n*ID Grup :* ${from}\n*Dibuat :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n*Owner Grup :* @${groupMetadata.owner.split('@')[0]}\n*Jumlah Admin :* ${groupAdmins.length}\n*Jumlah Peserta :* ${groupMembers.length}\n*Welcome :* ${isWelkom ? 'Aktif' : 'Mati'}\n*AntiLink :* ${isAntiLink ? 'Aktif' : 'Mati'}\n*Desc :* \n\n${groupMetadata.desc}`
-deff.sendMessage(from, await getBuffer(pic), image, {quoted: mek, caption: ingfo, contextInfo: {"mentionedJid": [groupMetadata.owner.replace('@c.us', '@s.whatsapp.net')]}})
+deff.sendMessage(from, await getBuffer(pic), image, {quoted: ftroli, caption: ingfo, contextInfo: {"mentionedJid": [groupMetadata.owner.replace('@c.us', '@s.whatsapp.net')]}})
 break
 case 'resetlinkgc':
 case 'resetlinkgroup':
