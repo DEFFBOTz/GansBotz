@@ -2178,6 +2178,11 @@ anu1 = `➻ *NAMA* : ${anu.your_name}\n`
 anu1 += `➻ *NINJA* : ${anu.result}\n`
 reply(anu1)
 break 
+case 'puisi': case 'bucinquote': case 'dilanquote': case 'katasenja': case 'motivasi':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/${command}?apikey=8423e19c13`)
+	reply(txt.result.message)
+	}
+	break
 case 'randomquote':{
 	let txt = await fetchJson(`https://zenzapi.xyz/api/random/quote?apikey=8423e19c13`)
 	reply(txt.result.message)
