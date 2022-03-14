@@ -270,7 +270,7 @@ module.exports = deff = async (deff, mek) => {
 //<------------------------------------------------------------------------------->/
 
         let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 1010101,status: 200, thumbnail: fs.readFileSync(`./gambar/thumb.jpg`), surface: 200, message: `「	B⃞O⃞T W⃢HA⃢TSA⃢PP   」	`, orderTitle: 'deffpratama', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-        let fdoc = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `「	BOT WHATSAPP   」	`,jpegThumbnail: fs.readFileSync(`./gambar/thumb.jpg`)}}}
+        let fdoc = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `「	DEFFBOTz   」	`,jpegThumbnail: fs.readFileSync(`./gambar/thumb.jpg`)}}}
         let fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":99999,"ptt": "true"}} } 
         let fgif = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title":`「	BOT WHATSAPP   」	`, "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': `「	BOT WHATSAPP   」	`, 'jpegThumbnail': fs.readFileSync(`./gambar/thumb.jpg`)}}}
 	   let fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": "P", "caption": `「	BOT WHATSAPP   」	`, 'jpegThumbnail': fs.readFileSync(`./gambar/thumb.jpg`)}}}
@@ -1494,6 +1494,11 @@ menunya = `⌜𝐷𝑂𝑊𝑁𝐿𝑂𝐴𝐷 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}tiktok _send link tt_
 ⃝⃤⇝ ${prefix}tiktoknowm _send link tt_
 ⃝⃤⇝ ${prefix}tiktokwm _send link tt_
+⃝⃤⇝ ${prefix}spotify
+⃝⃤⇝ ${prefix}spotifysearch
+⃝⃤⇝ ${prefix}nhentai
+⃝⃤⇝ ${prefix}nhentaipdf
+⃝⃤⇝ ${prefix}nhentaisearch
 ⃝⃤⇝ ${prefix}pinterest
 ⃝⃤⇝ ${prefix}mediafire
 `
@@ -1567,6 +1572,30 @@ menunya = `⌜𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}loli
 ⃝⃤⇝ ${prefix}milf
 ⃝⃤⇝ ${prefix}waifu
+⃝⃤⇝ ${prefix}nami 
+⃝⃤⇝ ${prefix}copper 
+⃝⃤⇝ ${prefix}naruto  
+⃝⃤⇝ ${prefix}zoro 
+⃝⃤⇝ ${prefix}ussop 
+⃝⃤⇝ ${prefix}minato 
+⃝⃤⇝ ${prefix}sasuke 
+⃝⃤⇝ ${prefix}sakura
+⃝⃤⇝ ${prefix}luffy 
+⃝⃤⇝ ${prefix}sanji  
+⃝⃤⇝ ${prefix}boruto 
+⃝⃤⇝ ${prefix}sarada 
+⃝⃤⇝ ${prefix}mitsuki 
+⃝⃤⇝ ${prefix}orochimaru 
+⃝⃤⇝ ${prefix}tsunade 
+⃝⃤⇝ ${prefix}kakashi 
+⃝⃤⇝ ${prefix}killua 
+⃝⃤⇝ ${prefix}gon 
+⃝⃤⇝ ${prefix}rimuru 
+⃝⃤⇝ ${prefix}sagiri 
+⃝⃤⇝ ${prefix}natsu 
+⃝⃤⇝ ${prefix}tanjirou 
+⃝⃤⇝ ${prefix}nezuko 
+⃝⃤⇝ ${prefix}senku
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
@@ -1578,6 +1607,29 @@ menunya = `⌜𝑅𝐴𝑁𝐷𝑂𝑀 𝑀𝐸𝑁𝑈⌟
 ⃝⃤⇝ ${prefix}pantun
 ⃝⃤⇝ ${prefix}katailham
 ⃝⃤⇝ ${prefix}namaninja _nama kamu_
+⃝⃤⇝ ${prefix}puisi 
+⃝⃤⇝ ${prefix}bucinquote 
+⃝⃤⇝ ${prefix}dilanquote 
+⃝⃤⇝ ${prefix}katasenja 
+⃝⃤⇝ ${prefix}motivasi
+⃝⃤⇝ ${prefix}randomquote
+⃝⃤⇝ ${prefix}quotemuslim
+⃝⃤⇝ ${prefix}quotesgalau
+⃝⃤⇝ ${prefix}creepyfact
+⃝⃤⇝ ${prefix}cerpen
+⃝⃤⇝ ${prefix}cersex
+⃝⃤⇝ ${prefix}cersex2
+⃝⃤⇝ ${prefix}huluh [text]
+⃝⃤⇝ ${prefix}hilih [text]
+⃝⃤⇝ ${prefix}heleh [text]
+⃝⃤⇝ ${prefix}halah [text]
+⃝⃤⇝ ${prefix}reversetext [text]
+⃝⃤⇝ ${prefix}cercreepy
+⃝⃤⇝ ${prefix}faktaunik
+⃝⃤⇝ ${prefix}quotetrump
+⃝⃤⇝ ${prefix}animequote
+⃝⃤⇝ ${prefix}animequote2
+⃝⃤⇝ ${prefix}trumpthink
 `
 deff.sendMessage(from, { contentText: `${menunya}`, footerText: `${faketeks}`, buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },{ buttonId: `${prefix}sc`, buttonText: { displayText: 'SCRIPT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
@@ -2126,6 +2178,77 @@ anu1 = `➻ *NAMA* : ${anu.your_name}\n`
 anu1 += `➻ *NINJA* : ${anu.result}\n`
 reply(anu1)
 break 
+case 'randomquote':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/random/quote?apikey=8423e19c13`)
+	reply(txt.result.message)
+	}
+	break
+case 'quotemuslim':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/randomquote/muslim?apikey=8423e19c13`)
+	reply(txt.result.message)
+	}
+	break
+case 'quotesgalau':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/quotes/galau?apikey=8423e19c13`)
+	reply(txt.result.message)
+	}
+	break
+case 'creepyfact':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/creepyfact?apikey=8423e19c13`)
+	reply(txt.result.message)
+	}
+	break
+case 'cerpen':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/cerpen?apikey=8423e19c13`)
+	reply('Judul : ' + txt.result.Judul + '\n' + 'Penulis : ' + txt.result.Penulis + '\n' + 'Sumber : ' + txt.result.sumber + '\n' + 'Cerita : ' + txt.result.cerita)
+	}
+	break
+case 'cersex':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/cersex?apikey=8423e19c13`)
+	reply('Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
+	}
+	break
+case 'cersex2':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/cersex2?apikey=8423e19c13`)
+	haruka.sendMessage(from, await getBuffer(txt.result.Thumb), MessageType.image,{quoted: mek, caption: 'Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita})
+	}
+	break
+case 'huluh': case 'hilih': case 'heleh' : case 'halah': case 'reversetext':{
+	if (args.length == 0) return reply(`Example: ${prefix + command} Haruka`)
+	let txt = await fetchJson(`https://zenzapi.xyz/api/${command}?query=${q}&apikey=8423e19c13`)
+	reply(txt.result)
+	}
+	break
+case 'cercreepy':{
+	let txt = await fecthJson(`https://zenzapi.xyz/api/cercreepy?apikey=8423e19c13`)
+	reply('Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
+	}
+	break
+case 'faktaunik':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/faktaunik?apikey=8423e19c13`)
+	reply(txt.result)
+	}
+	break
+case 'quotetrump':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/trumpquotes?apikey=8423e19c13`)
+	reply('En : ' + txt.result.en + '\n' + 'Id : ' + txt.result.id)
+	}
+	break
+case 'animequote':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/animequotes?apikey=8423e19c13`)
+	reply('Anime : ' + txt.result.anime + '\n' + 'Karakter : ' + txt.result.character + '\n' + 'En : ' + txt.result.en + '\n' + 'Id : ' + txt.result.id)
+	}
+	break
+case 'animequote2':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/animequotes2?apikey=8423e19c13`)
+	haruka.sendMessage(from, await getBuffer(txt.result.thumb), MessageType.image, {quoted: mek, caption: 'Anime : ' + txt.result.anime + '\n' + 'Karakter : ' + txt.result.character + '\n' + 'Episode : ' + txt.result.episode + '\n' + 'Quotes : ' + txt.result.quotes})
+	}
+	break
+case 'trumpthink':{
+	let txt = await fetchJson(`https://zenzapi.xyz/api/trumpthink?apikey=8423e19c13`)
+	reply('En : ' + txt.result.en + '\n' + 'Id : ' + txt.result.id)
+	}
+	break
 //Menu Sticker
 case 'gifstiker':
 				case 's':
@@ -2636,6 +2759,84 @@ case 'tiktok':
               kntl =`Silahkan pilihan media yg mau di download kak:v`
               deff.sendMessage(from, { contentText: `${kntl}`, footerText: `${bgst}`, buttons: [{ buttonId: `${prefix}tiktoknowm ${q}`, buttonText: { displayText: '🎥NO WM' }, type: 1 },{ buttonId: `${prefix}ttdl ${q}`, buttonText: { displayText: '🎥WM' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fakeimage, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 break
+case 'spotify':{
+    if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+    url = args[0]
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=e966d3aac613b61dabd35cc6&url=${url}`)
+    get_result = get_result.result
+    ini_txt = `Title : ${get_result.title}\n`
+    ini_txt += `Artists : ${get_result.artists}\n`
+    ini_txt += `Duration : ${get_result.duration}\n`
+    ini_txt += `Popularity : ${get_result.popularity}\n`
+    ini_txt += `Preview : ${get_result.preview_url}\n`
+    thumbnail = await getBuffer(get_result.thumbnail)
+    await deff.sendMessage(from, thumbnail, image, { quoted: ftroli, caption: ini_txt })
+    get_audio = await getBuffer(get_result.link)
+    await deff.sendMessage(from, get_audio, audio, { mimetype: 'audio/mpeg', filename: `${get_result.title}.mp3`, quoted: fvn})
+    }
+    break
+case 'spotifysearch':{
+    if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
+    query = args.join(" ")
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=e966d3aac613b61dabd35cc6&query=${query}`)
+    get_result = get_result.result
+    ini_txt = ""
+    for (var x of get_result) {
+        ini_txt += `Title : ${x.title}\n`
+        ini_txt += `Artists : ${x.artists}\n`
+        ini_txt += `Duration : ${x.duration}\n`
+        ini_txt += `Link : ${x.link}\n`
+        ini_txt += `Preview : ${x.preview_url}\n\n\n`
+    }
+    fakeitem(ini_txt)}
+    break
+case 'nhentai':{
+    if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
+    henid = args[0]
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=e966d3aac613b61dabd35cc6`)
+    get_result = get_result.result
+    ini_txt = `Title Romaji : ${get_result.title_romaji}\n`
+    ini_txt += `Title Native : ${get_result.title_native}\n`
+    ini_txt += `Read Online : ${get_result.read}\n`
+    get_info = get_result.info
+    ini_txt += `Parodies : ${get_info.parodies}\n`
+    ini_txt += `Character : ${get_info.characters.join(", ")}\n`
+    ini_txt += `Tags : ${get_info.tags.join(", ")}\n`
+    ini_txt += `Artist : ${get_info.artists}\n`
+    ini_txt += `Group : ${get_info.groups}\n`
+    ini_txt += `Languager : ${get_info.languages.join(", ")}\n`
+    ini_txt += `Categories : ${get_info.categories}\n`
+    ini_txt += `Pages : ${get_info.pages}\n`
+    ini_txt += `Uploaded : ${get_info.uploaded}\n`
+    fakeitem(ini_txt)}
+    break
+ case 'nhentaipdf':{
+    if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
+    henid = args[0]
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=e966d3aac613b61dabd35cc6`)
+    get_result = get_result.result
+    ini_buffer = await getBuffer(get_result)
+    await deff.sendMessage(from, ini_buffer, document, { quoted: fdoc, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
+    }
+    break
+case 'nhentaisearch':{
+    if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
+    query = args.join(" ")
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=e966d3aac613b61dabd35cc6&query=${query}`)
+    get_result = get_result.result
+    ini_txt = "Result : \n"
+    for (var x of get_result) {
+        ini_txt += `Id : ${x.id}\n`
+        ini_txt += `Title English : ${x.title_english}\n`
+        ini_txt += `Title Japanese : ${x.title_japanese}\n`
+        ini_txt += `Native : ${x.title_native}\n`
+        ini_txt += `Upload : ${x.date_upload}\n`
+        ini_txt += `Page : ${x.page}\n`
+        ini_txt += `Favourite : ${x.favourite}\n\n`
+    }
+    reply(ini_txt)
+    }
+    break
 case 'pinterest':
         if (!q) return reply("gambar apa?");
         reply(mess.wait)
@@ -2739,7 +2940,18 @@ reply(mess.wait)
 milf = await getBuffer(`https://tyz-api.herokuapp.com/randomimg/milf`)
 deff.sendMessage(from, milf, image, { quoted: fkontak})
 break
+case 'nami': case 'copper': case 'naruto':  case 'zoro': case 'ussop': case 'minato': case 'sasuke': case 'sakura':case 'luffy': case 'sanji':  case 'boruto': case 'sarada': case 'mitsuki': case 'orochimaru': case 'tsunade': case 'kakashi': case 'killua': case 'gon': case 'rimuru': case 'sagiri': case 'natsu': case 'tanjirou': case 'nezuko': case 'senku':
+{
+			try{	
+            let txt = await fetchJson(`https://myselfff.herokuapp.com/docs/anime/${command}`)            
+            haruka.sendMessage(from, await getBuffer(txt.result.list), MessageType.image, {caption: 'Wibu 👀', quoted: fkontak})            
+            } catch (e){
+               reply('Server Eror')
+			}}	    	    	
+            break
+
    // Maker Menu //
+   
                     case 'cerpen': 
 anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/cerpen`)     
 anu1 = `➻ *JUDUL* : ${anu.result.title}\n`
