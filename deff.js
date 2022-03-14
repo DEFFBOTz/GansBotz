@@ -2766,8 +2766,9 @@ case 'tiktok':
 break
 case 'spotify':{
     if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+    if(!isUrl(args[0]) && !args[0].includes('spotify')) return reply('Itu Bukan Link Spotify!')
     url = args[0]
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=e966d3aac613b61dabd35cc6&url=${url}`)
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=172e5b27c5299af6bfdb45b1&url=${url}`)
     get_result = get_result.result
     ini_txt = `Title : ${get_result.title}\n`
     ini_txt += `Artists : ${get_result.artists}\n`
@@ -2781,9 +2782,9 @@ case 'spotify':{
     }
     break
 case 'spotifysearch':{
-    if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
+    if (args.length == 0) return reply(`Yang Mau Di Cari Apa?\nContoh: ${prefix + command} Melukis Senja`)
     query = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=e966d3aac613b61dabd35cc6&query=${query}`)
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=172e5b27c5299af6bfdb45b1&query=${query}`)
     get_result = get_result.result
     ini_txt = ""
     for (var x of get_result) {
@@ -2798,7 +2799,7 @@ case 'spotifysearch':{
 case 'nhentai':{
     if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
     henid = args[0]
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=e966d3aac613b61dabd35cc6`)
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=172e5b27c5299af6bfdb45b1`)
     get_result = get_result.result
     ini_txt = `Title Romaji : ${get_result.title_romaji}\n`
     ini_txt += `Title Native : ${get_result.title_native}\n`
@@ -2818,7 +2819,7 @@ case 'nhentai':{
  case 'nhentaipdf':{
     if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
     henid = args[0]
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=e966d3aac613b61dabd35cc6`)
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=172e5b27c5299af6bfdb45b1`)
     get_result = get_result.result
     ini_buffer = await getBuffer(get_result)
     await deff.sendMessage(from, ini_buffer, document, { quoted: fdoc, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
@@ -2827,7 +2828,7 @@ case 'nhentai':{
 case 'nhentaisearch':{
     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
     query = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=e966d3aac613b61dabd35cc6&query=${query}`)
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=172e5b27c5299af6bfdb45b1&query=${query}`)
     get_result = get_result.result
     ini_txt = "Result : \n"
     for (var x of get_result) {
