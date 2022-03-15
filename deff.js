@@ -1318,7 +1318,7 @@ case 'listmenu':
 timestampe = speed();
 latensie = speed() - timestampe
  let listMsg = {
- title: "Hai kak @${sender.split('@')[0]}",
+ title: "LIST MENU",
  buttonText: 'KLIK DISINI',
  footerText: 'D̡͈̦̤͕ͫͫ͌́̊̆̌́͡ͅE̴̜̳͚̠̥͆ͫͣ́̋̃̄҉̛F̭̭̟̹̈́ͮ̿ͧͭ͋̓͟ͅ͏̴F̸̡̯̮̻̼ͤͫ̂ͨͬ̃̽ͅ҉B̡̡̩̯̜͉̖͂͛̀̊̈́̍̃͠O̸̵̧͖̘̩̣͎̽̈̎ͩͧ̑̈́T̜͉̤̹͚̆ͫ̒͗̋ͥͭ͏͘͘ẕ̦̩̬͈̊̎͛͐̓ͪ̿͏̧҉',
  description:`┏┉⌣ ┈̥-̶̯͡..̷̴✽̶\n┆ *INFO BOT*\n└┈┈┈┈┈┈┈┈┈\n\nCreator Bot : De⃟f⃢fri Ga⃢⃟ns❦\nNama Owner : ${ownerName}\nNama Bot : ${botName}\nPrefix : Multi Prefix\nBaterai : ${baterai}%\nSpeed : ${latensie.toFixed(4)} second\nLanguage : Javascript`,
